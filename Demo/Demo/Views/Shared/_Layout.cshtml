@@ -38,16 +38,17 @@
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
             </section>
-        </div>
+        </div> 
+        </body>
         <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET MVC</p>
-                </div>
-            </div>
+           
+                <section>                
+                    <p> @DateTime.Now.Year - Spot it <br>Ariel Pérez, Katherine Páez Ramos, Gustavo Saavedra.</p>
+              </section>
+           
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
-    </body>
+   
 </html>

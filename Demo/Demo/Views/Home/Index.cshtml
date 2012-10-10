@@ -2,13 +2,17 @@
     ViewBag.Title = "Página principal";
 }
 @section featured {
+
+    <section class="menu-buttons">
+    <center><img src="..\Images\nav.png" /></center>
+    </section>
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
                 <h1>@ViewBag.Title.</h1>
                 <h2>@ViewBag.Message</h2>
             </hgroup>
-            <p>
+            <p >
                 Para obtener más información sobre ASP.NET MVC, visite
                 <a href="http://asp.net/mvc" title="Sitio web de ASP.NET MVC">http://asp.net/mvc</a>.
                 La página incluye <mark>vídeos, cursos y ejemplos</mark> para ayudarle a sacar el máximo partido a ASP.NET MVC.
@@ -17,8 +21,9 @@
             </p>
         </div>
     </section>
-}
-<h3>Le sugerimos lo siguiente:</h3>
+}  
+
+<!--<h3>Le sugerimos lo siguiente:</h3>
 <ol class="round">
     <li class="one">
         <h5>Introducción</h5>
@@ -42,4 +47,4 @@
         y precio para sus aplicaciones.
         <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Más información…</a>
     </li>
-</ol>
+</ol>-->
