@@ -24,7 +24,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Pacifico, "Helveitca Neue", Helvetica, Arial, sans-serif;
+	font-family: Pacifico, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: lighter; /*counteract strong browser anti-aliasing*/
 }
 
@@ -60,11 +60,11 @@ header {
 
 h1.logo a {
 	display: block;
-	width: 470px;
+	width: 610px;
 	height: 70px;
-	background: url('images/uc.png') no-repeat;
+	background: url('images/uc2.png') no-repeat;
 	float: left;
-	margin: 20px 0 0 10px;
+	margin: 20px 0 0 -20px;
 	text-indent: -5000px;
 	text-align:right;
 	
