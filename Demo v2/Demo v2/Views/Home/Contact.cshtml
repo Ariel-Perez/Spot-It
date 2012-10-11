@@ -2,49 +2,37 @@
     ViewBag.Title = "Contacto";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
-</hgroup>
 
-<section class="contact">
-    <header>
-        <h3>Teléfono</h3>
-    </header>
-    <p>
-        <span class="label">Principal:</span>
-        <span>425.555.0100</span>
-    </p>
-    <p>
-        <span class="label">Fuera del horario laboral:</span>
-        <span>425.555.0199</span>
-    </p>
-</section>
+<div class="wrapper">
+<div id="contact">
+	<center><h1>Envía un email</h1></center>
+    <br /><br />
+	<form action="#" method="post">
+		<fieldset>
+			<label for="name">Nombre:</label>
+			<input type="text" id="name" placeholder="Ingresa tu nombre" />
+			
+			<label for="email">Email:</label>
+			<input type="email" id="email" placeholder="Ingresa tu dirección" />
+			
+			<label for="message">Mensaje:</label>
+			<textarea id="message" placeholder="¿Qué quieres comentarnos?"></textarea>
+			
+			<input type="submit" value="Enviar mensaje" />
+			
+		</fieldset>
+	</form>
+</div>
+</div>
+    <footercop>
+		<div class="wrapper">
+		
+<!--Copyright Notice-->
 
-<section class="contact">
-    <header>
-        <h3>Correo electrónico</h3>
-    </header>
-    <p>
-        <span class="label">Support:</span>
-        <span><a href="mailto:Support@example.com">Support@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">Marketing:</span>
-        <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">General:</span>
-        <span><a href="mailto:General@example.com">General@example.com</a></span>
-    </p>
-</section>
+			<p class="copyright_notice">Copyright 2012 © <strong>Spot It</strong>. Todos los derechos reservados.</p>
+			<div class="logo"><p>Spot It</p></div>
+			
+		</div><!--.wrapper-->
+	</footercop>
 
-<section class="contact">
-    <header>
-        <h3>Dirección</h3>
-    </header>
-    <p>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399
-    </p>
-</section>
+ 
