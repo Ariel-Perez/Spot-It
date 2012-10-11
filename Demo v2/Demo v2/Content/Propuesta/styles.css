@@ -8,7 +8,7 @@ ul{ list-style:none; list-style-position:outside;}
 a {  outline: none;}
 
 /* Tell old browsers how to handle HTML5 elements */
-header, footer, aside, nav, article {display: block;}
+header, footer, aside, nav, article,footercop {display: block;}
 
 /* Essentials */
 
@@ -235,6 +235,56 @@ article.feature_text a:active {
 	line-height: 58px;
 }
 
+
+/*featured text not*/
+
+article.feature_text_no {
+	float: none;
+	width: auto;
+	margin: 60px 10px 0 0;
+}
+
+article.feature_text_no h2 {
+	font-size: 44px;
+	color: #2C5F66;
+	line-height: 120%;
+	margin: 0 0 20px 0;
+	text-shadow: 0 1px 0 #F1F7F8;
+}
+
+article.feature_text_no p {
+	color: #5E8C92;
+	text-shadow: 0 1px 0 #F1F7F8;
+	font-size: 24px;
+}
+
+article.feature_text_no a {
+	display: block;
+	width: 257px;
+	height: 77px;
+	color: #FFFFFF;
+	background: url('images/btn_main_feature.png') no-repeat;
+	margin: 20px 0 0 0;
+	text-align: center;
+	line-height: 74px;
+	font-family: Pacifico, "Helveitca Neue", Helvetica, Arial, sans-serif;
+	font-weight: lighter; /*counteract strong browser anti-aliasing*/
+	font-size: 22px;
+	text-shadow: 0 -1px 0 #38474A;
+}
+
+article.feature_text_no a:hover {
+	background-position: 0 -63px;
+	color: #4FB797;
+	line-height: 74px;
+}
+
+article.feature_text_no a:active {
+	color: #EFEFEF;
+	background-position: 0 -126px;
+	line-height: 58px;
+}
+
 /* Featured Services */
 
 ul.featured_services {
@@ -382,6 +432,13 @@ footer {
 	color: #5E8C92;
 }
 
+footercop {
+	clear: both;
+	height: 100px;
+	background: #CDE0E4;
+	color: #5E8C92;
+}
+
 footer h4 {
 	font-size: 25px;
 	color: #2C5F66;
@@ -524,4 +581,20 @@ footer .logo {
 	background: url('images/logo.png') no-repeat;
 	margin: -40px 10px 0 0;
 	text-indent: -5000px;
+}
+
+footercop p.copyright_notice {
+	clear: both;
+	padding: 40px 0 0 0;
+	
+}
+
+footercop .logo {
+	float: right;
+	width: 221px;
+	height: 65px;
+	background: url('images/logo.png') no-repeat;
+	margin: -40px 10px 0 0;
+	text-indent: -5000px;
+	padding: 20px 0 0 0;
 }
