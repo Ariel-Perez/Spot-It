@@ -1,0 +1,16 @@
+DROP TABLE Usuario;
+DROP TABLE Mapa;
+DROP TABLE Zona;
+DROP TABLE Punto;
+DROP TABLE Construccion;
+DROP TABLE Lugar;
+DROP TABLE Evento;
+DROP TABLE Comentario;
+DROP TABLE Asiste;
+DROP TABLE Sugerencia_Lugar;
+DROP TABLE Favorito;
+DROP TABLE Premio;
+DROP TABLE Badge;
+DROP TABLE Categoria;
+DROP TABLE Lugar_En_Categoria;
+DROP TABLE Foto;
