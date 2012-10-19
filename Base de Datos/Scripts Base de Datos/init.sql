@@ -1,5 +1,5 @@
 CREATE TABLE Usuario(
-id int,
+id int IDENTITY(1,1),
 nombre nvarchar(60),
 apellido nvarchar(60),
 mail nvarchar(60),
@@ -15,7 +15,7 @@ numGenteInvitada int,
 CONSTRAINT "Usuario_pkey" PRIMARY KEY(id));
 
 CREATE TABLE Mapa(
-id int,
+id int IDENTITY(1,1),
 nombre nvarchar(60),
 imagen varbinary(5000),
 fecha_creacion datetime DEFAULT(getdate()),
@@ -23,7 +23,7 @@ CONSTRAINT "Mapa_pkey" PRIMARY KEY(id));
 
 CREATE TABLE Zona(
 idMapa int,
-id int,
+id int IDENTITY(1,1),
 nombre nvarchar(100),
 fecha_creacion datetime DEFAULT(getdate()),
 CONSTRAINT "Zona_pkey" PRIMARY KEY(idMapa, id),
@@ -139,7 +139,7 @@ CONSTRAINT "Lugar_En_Categoria_fkey1" FOREIGN KEY(idMapa, idZona) references Zon
 CREATE TABLE Foto(
 idMapa int,
 idZona int,
-id int,
+id int IDENTITY(1,1),
 foto varbinary(5000),
 CONSTRAINT "Foto_pkey" PRIMARY KEY(idMapa, idZona, id),
 CONSTRAINT "Foto_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
