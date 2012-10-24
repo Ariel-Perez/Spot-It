@@ -144,3 +144,55 @@ foto varbinary(5000),
 CONSTRAINT "Foto_pkey" PRIMARY KEY(idMapa, idZona, id),
 CONSTRAINT "Foto_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
 
+CREATE TABLE Complejo(
+idMapa int,
+idZona int,
+codigo nvarchar(60),
+CONSTRAINT "Complejo_pkey" PRIMARY KEY(idMapa, codigo),
+CONSTRAINT "Complejo_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
+
+CREATE TABLE Sala(
+idMapa int,
+idZona int,
+codigoComplejo nvarchar(60),
+codigo nvarchar(60),
+capacidad int,
+CONSTRAINT "Sala_pkey" PRIMARY KEY(idMapa, codigo),
+CONSTRAINT "Sala_fkey1" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id),
+CONSTRAINT "Sala_fkey2" FOREIGN KEY(idMapa, codigoComplejo) references Complejo(idMapa, codigo));
+
+CREATE TABLE Facultad(
+idMapa int,
+idZona int,
+nombre nvarchar(100),
+CONSTRAINT "Facultad_pkey" PRIMARY KEY(idMapa, nombre),
+CONSTRAINT "Facultad_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
+
+CREATE TABLE Departamento(
+idMapa int,
+nombreFacultad nvarchar(100),
+nombre nvarchar(100),
+CONSTRAINT "Departamento_pkey" PRIMARY KEY(idMapa, nombreFacultad, nombre),
+CONSTRAINT "Departamento_fkey" FOREIGN KEY(idMapa, nombreFacultad) references Facultad(idMapa, nombre));
+
+CREATE TABLE Autoridad(
+idMapa int,
+id int IDENTITY(1, 1),
+idZona int,
+nombre nvarchar(100),
+apellido nvarchar(100),
+mail nvarchar(100),
+CONSTRAINT "Autoridad_pkey" PRIMARY KEY(idMapa, id),
+CONSTRAINT "Autoridad_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
+
+CREATE TABLE TrabajaEn(
+idMapa int,
+nombreFacultad nvarchar(100),
+nombreDepto nvarchar(100),
+idAutoridad int,
+cargo nvarchar(100),
+CONSTRAINT "TrabajaEn_pkey" PRIMARY KEY(idMapa, nombreFacultad, nombreDepto, idAutoridad),
+CONSTRAINT "TrabajaEn_fkey1" FOREIGN KEY(idMapa, nombreFacultad) references Facultad(idMapa, nombre),
+CONSTRAINT "TrabajaEn_fkey2" FOREIGN KEY(idMapa, nombreFacultad, nombreDepto) references Departamento(idMapa, nombreFacultad, nombre),
+CONSTRAINT "TrabajaEn_fkey3" FOREIGN KEY(idMapa, idAutoridad) references Autoridad(idMapa, id));
+

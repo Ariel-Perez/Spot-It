@@ -1,3 +1,9 @@
+DROP TABLE TrabajaEn;
+DROP TABLE Autoridad;
+DROP TABLE Departamento;
+DROP TABLE Facultad;
+DROP TABLE Sala;
+DROP TABLE Complejo;
 DROP TABLE Foto;
 DROP TABLE Lugar_En_Categoria;
 DROP TABLE Categoria;
