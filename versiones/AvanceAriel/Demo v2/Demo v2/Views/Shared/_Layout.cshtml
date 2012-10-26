@@ -1,0 +1,40 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+ 
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<meta charset="utf-8" />
+		<title>@ViewBag.Title</title>
+		 <link href=@Url.Content("~/favicon.ico") rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+
+         <link rel="stylesheet" href= @Url.Content("~/Content/Propuesta/styles.css") type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Stoke' rel='stylesheet' type='text/css'>
+       
+		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+       
+	</head>
+    <header>
+	<div class="wrapper">
+		<h1 class="logo"><a href="http://www.uc.cl"></a></h1>
+        <ul>
+			<li>@Html.ActionLink("Inicio", "Index", "Home", null, new { @class = "active" })</li>
+			<li>@Html.ActionLink("Equipo", "About", "Home")</li>
+			<li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+		</ul>
+	</div><!--.wrapper-->
+</header>
+	<body>
+    @RenderBody()
+
+
+        @RenderSection("scripts", required: false)
+	</body>
+</html>
