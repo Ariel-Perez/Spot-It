@@ -1,3 +1,15 @@
+<----IMPORTANTE---->
+STRING DE CONEXIÓN
+
+=======================
+
+workstation id=ingenieria.mssql.somee.com;packet size=4096;user id=grupo8_SQLLogin_1;pwd=pz3vzt3b6t;data source=ingenieria.mssql.somee.com;persist security info=False;initial catalog=ingenieria
+
+===================================
+
+<----IMPORTANTE---->
+
+
 Instructivo de conexion
 - Principal ventaja de realizarlo: facilidad en la consuklta de tablas, sus atributos y los datos que contiene
 

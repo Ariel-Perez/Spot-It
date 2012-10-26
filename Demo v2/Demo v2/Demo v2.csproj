@@ -187,6 +187,7 @@
     <Content Include="Content\Propuesta\images\Tumblr.png" />
     <Content Include="Content\Propuesta\images\Twitter.png" />
     <Content Include="Content\Propuesta\images\uc.png" />
+    <Content Include="Images\mapa2.jpg" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Content\Propuesta\images\uc2.png" />
     <Content Include="Content\Propuesta\styles.css" />
