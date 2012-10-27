@@ -1,15 +1,17 @@
 ﻿@{
     ViewBag.Title = "Map";
+    /*Aquí se enuentra el mapa, su lógica, por ahora solo muestra el edificio San Agustín. Pero funciona*/
 }
 
 <h2>Map</h2>
  <style>
+     /*Definimos algunas características de diseño para el contenedor de html5*/
       body {
         margin: 0px;
         padding: 0px;
       }
       canvas {
-        border: 1px solid #9C9898;
+        border: 1px solid #4FB797;
       }
       #tango {
         position: absolute;
@@ -17,56 +19,60 @@
         left: 10px;
         padding: 10px;
       }
-      #container {
-        background-image: url('http://www.html5canvastutorials.com/demos/assets/map-background.png');
+      #container 
+      {
+          /*La imagen más importante, el mapa de San Joaquín, irá de fondo*/
+        background-image: url('http://i45.tinypic.com/2q2q0qp.jpg');
         display: inline-block;
         overflow: hidden;
-        height: 262px;
-        width: 580px;
+        height: 500px;
+        width: 800px;
         background-position: 1px 1px;
       }
     </style>
     <script type="text/javascript" src="http://www.html5canvastutorials.com/libraries/kinetic-v4.0.0.js"></script>
     <script type="text/javascript" src="http://www.html5canvastutorials.com/demos/assets/worldMap.js"></script>
-    <script>
-        window.onload = function () {
-            var stage = new Kinetic.Stage({
-                container: 'container',
-                width: 578,
-                height: 260
-            });
-            var mapLayer = new Kinetic.Layer({
-                y: 20,
-                scale: 0.6
-            });
+<script src="../../Scripts/worldMap.js" type="text/javascript"></script>
 
-            /*
-            * loop through country data stroed in the worldMap
-            * variable defined in the worldMap.js asset
-            */
-            for (var key in worldMap.shapes) {
-                var path = new Kinetic.Path({
-                    data: worldMap.shapes[key],
-                    fill: '#ccc',
-                    stroke: '#555',
-                    strokeWidth: 1
-                });
+      <script>
+      /*Vamos a setear los eventos, onload: cuando carga el mapa*/
+          window.onload = function () {
+              var stage = new Kinetic.Stage({
+                  container: "container",
+                  width: 797,
+                  height: 498
+              });
 
-                path.on('mouseover', function () {
-                    this.setFill('red');
-                    mapLayer.drawScene();
-                });
+              var layer = new Kinetic.Layer();
 
-                path.on('mouseout', function () {
-                    this.setFill('#ccc');
-                    mapLayer.drawScene();
-                });
+              /*Dibujamos las figuras sobre la imagen, por ahora solo una: San Agustín*/
+              var poly = new Kinetic.Polygon({
+                  points: [115, 247, 116, 251, 108, 250, 110, 299, 106, 299, 106, 307, 102, 307, 98, 250, 108, 237, 108, 247, 115, 247],
+                  fill: "#679BCD",
+                  stroke: "black",
+                  strokeWidth: 0.5
+              });
 
-                mapLayer.add(path);
-            }
+              /*Cuando el mouse está encima de la figura, esta se vuelve roja*/
+              poly.on('mouseover', function () {
+                  this.setFill('red');
+                  layer.drawScene();
+              });
 
-            stage.add(mapLayer);
-        };
+              //el mouse se va y la figura vuelve a ser de color azul
+              poly.on('mouseout', function () {
+                  this.setFill('#679BCD');
+                  layer.drawScene();
+              });
+
+
+              // add the shape to the layer
+              layer.add(poly);
+
+              // add the layer to the stage
+              stage.add(layer);
+          };
 
     </script>
    <center><div id="container"></div></center>
+   <br /><br />

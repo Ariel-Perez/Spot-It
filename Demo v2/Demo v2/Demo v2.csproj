@@ -192,6 +192,8 @@
     <Content Include="Content\Propuesta\images\Tumblr.png" />
     <Content Include="Content\Propuesta\images\Twitter.png" />
     <Content Include="Content\Propuesta\images\uc.png" />
+    <Content Include="Scripts\InteractiveMapData.js" />
+    <Content Include="Scripts\worldMap.js" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Content\Propuesta\images\uc2.png" />
     <Content Include="Content\Propuesta\styles.css" />

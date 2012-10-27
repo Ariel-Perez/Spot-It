@@ -1,6 +1,6 @@
 ﻿@inherits System.Web.Mvc.WebViewPage
 
- 
+ <!--Diseño general del sitio web, este layout contiene header y footer, para no ponerlos en cada página -->
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -11,7 +11,10 @@
 		 <link href=@Url.Content("~/favicon.ico") rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
 
+        <!--CSS general del sitio -->
          <link rel="stylesheet" href= @Url.Content("~/Content/Propuesta/styles.css") type="text/css">
+
+         <!--Ocupamos algunas letras extras, Stoke y Pacifico -->
     <link href='http://fonts.googleapis.com/css?family=Stoke' rel='stylesheet' type='text/css'>
        
 		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -21,16 +24,22 @@
 
        
 	</head>
+
+    <!-- Header de cada página-->
     <header>
 	<div class="wrapper">
+    <!-- Incluye logo a la izquierda y un menú pequeño a la derecha (por ahora)-->
 		<h1 class="logo"><a href="http://www.uc.cl"></a></h1>
         <ul>
+        <!-- El menú consiste en Inicio, el mapa (lo más relevante), equipo donde se describirá al grupo de trabajo-->
 			<li>@Html.ActionLink("Inicio", "Index", "Home", null, new { @class = "active" })</li>
-			<li>@Html.ActionLink("Equipo", "About", "Home")</li>
-			<li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+			<li>@Html.ActionLink("Mapa", "Map", "Maps")</li>
+            <li>@Html.ActionLink("Equipo", "About", "Home")</li>
+			
 		</ul>
 	</div><!--.wrapper-->
 </header>
+<!--Ahora se cargará el body, que es lo que tiene cada página creada -->
 	<body>
     @RenderBody()
 
@@ -38,6 +47,7 @@
         @RenderSection("scripts", required: false)
 	</body>
 	
+    <!--El footer de la página -->
 	        <footercop>
 		<div class="wrapper">
 		
