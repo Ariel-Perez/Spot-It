@@ -174,10 +174,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Asiste.cs" />
+    <Compile Include="Models\Autoridad.cs" />
+    <Compile Include="Models\Badge.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Comentario.cs" />
+    <Compile Include="Models\Complejo.cs" />
+    <Compile Include="Models\Construccion.cs" />
+    <Compile Include="Models\Departamento.cs" />
+    <Compile Include="Models\Evento.cs" />
+    <Compile Include="Models\Facultad.cs" />
+    <Compile Include="Models\Horarios.cs" />
     <Compile Include="Models\Lugar.cs" />
     <Compile Include="Models\Lugar_En_Categoria.cs" />
+    <Compile Include="Models\Mapa.cs" />
+    <Compile Include="Models\Premio.cs" />
+    <Compile Include="Models\Punto.cs" />
+    <Compile Include="Models\Sala.cs" />
     <Compile Include="Models\SpotItEntities.cs" />
+    <Compile Include="Models\TrabajaEn.cs" />
+    <Compile Include="Models\Zona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
