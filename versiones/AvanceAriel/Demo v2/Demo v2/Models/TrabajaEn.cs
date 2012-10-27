@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Demo_v2.Models
 {
-    class TrabajaEn
+    public class TrabajaEn
     {
     }
 }

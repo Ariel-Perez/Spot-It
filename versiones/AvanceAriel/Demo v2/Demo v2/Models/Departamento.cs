@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Demo_v2.Models
 {
-    class Departamento
+    public class Departamento
     {
     }
 }
