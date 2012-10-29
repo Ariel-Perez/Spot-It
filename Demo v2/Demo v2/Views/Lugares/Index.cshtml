@@ -1,16 +1,12 @@
 ﻿@model IEnumerable<Demo_v2.Models.Categoria>
-
 @{
-    ViewBag.Title = "Lugares";
+    ViewBag.title = "Lugar";
 }
-
 <h2>@Model.Count() Categorías:</h2>
-
-<ul>
+<u>
     @foreach (var cat in Model)
-    {//por ahora solo muestra una categoría
-        <li>@cat.nombre</li>
+    {
+        <a href="Lugares/Categorias/@cat.nombre"><li>@cat.nombre</li></a>
+        
     }
-</ul>
-
-<br /><br />
+</u>

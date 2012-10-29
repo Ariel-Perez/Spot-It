@@ -12,7 +12,7 @@ namespace Demo_v2.Models
         public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Lugar> Lugar { get; set; }
         public DbSet<Lugar_En_Categoria> Lugar_En_Categoria { get; set; }
-
+        public DbSet<Sala> Sala { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

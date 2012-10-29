@@ -10,7 +10,6 @@ namespace Demo_v2.Controllers
     {
         //
         // GET: /Maps/
-
         public ActionResult Map()
         {
             ViewBag.Message = "Main map";

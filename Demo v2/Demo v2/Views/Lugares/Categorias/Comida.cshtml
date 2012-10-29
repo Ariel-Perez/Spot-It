@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Spot it";
+}
+
+<ul>
+    @foreach (var cat in Model)
+    {//por ahora solo muestra una categoría
+       <a href="Lugares/Categorias/@cat.nombre"> <li>@cat.nombre</li></a>
+    }
+</ul>
+
+<br /><br />
+
