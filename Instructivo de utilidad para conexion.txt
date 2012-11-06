@@ -11,7 +11,7 @@ workstation id=ingenieria.mssql.somee.com;packet size=4096;user id=grupo8_SQLLog
 
 
 Instructivo de conexion
-- Principal ventaja de realizarlo: facilidad en la consuklta de tablas, sus atributos y los datos que contiene
+- Principal ventaja de realizarlo: facilidad en la consulta de tablas, sus atributos y los datos que contiene
 
 1.- En visual studio ir a ver-> explorador de servidores
 2.- en el explorador de servidores escoger conectar con base de datos
@@ -21,5 +21,5 @@ Instructivo de conexion
                 escoger usar autentificacion de sql server
 	nombre usuario = grupo8_SQLLogin_1
 	contraseña = pz3vzt3b6t
-5.- Le dan a probar conexion, si colocaron todo bien deberia avisar que serealizo con exito
+5.- Le dan a probar conexion, si colocaron todo bien deberia avisar que se realizo con exito
 6.- Le dan a aceptar y veran que aparecera en el explorador de servidores una base de datos con el nombre vj2100.ingenieria.dbo. Alli veran una carpeta que dice tabla donde estan las tablas  de la bd, y si hacen click secundario en una tabla pueden ver todos los datos de esa tabla
