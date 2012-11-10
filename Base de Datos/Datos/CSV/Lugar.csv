@@ -1,5 +1,12 @@
-idMapa,idZona,descripcion
-1,1,"Segundo piso. Hay un ""Rincón"", donde se puede almorzar por 2250."
-1,2,Centro de Alumnos de Ingeniería. Tiene sillones cómodos.
-1,3,Edificio de Ingeniería. Aquí está el DCC.
-1,4,Por acá entra la gente que viene del metro. También está el Baticristo.
+Nombre,Descripcion
+Olimpo,"Segundo piso. Hay un ""Rincón"", donde se puede almorzar por 2250."
+CAI,Centro de Alumnos de Ingeniería. Tiene sillones cómodos.
+San Agustin,Edificio de Ingeniería. Aquí está el DCC.
+Entrada Principal,Por acá entra la gente que viene del metro. También está el Baticristo.
+Salas A,Estas son salas de ingeniería
+A1,
+A2,
+A3,
+H1,
+,
+,

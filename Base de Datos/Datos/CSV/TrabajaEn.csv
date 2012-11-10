@@ -1,2 +1,2 @@
-idMapa,nombreFacultad,nombreDepto,idAutoridad,cargo
-1,Ingenieria,,1,Decano
+FacultadId,AutoridadId,DepartamentoId,Cargo
+1,1,,Decano

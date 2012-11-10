@@ -1,5 +1,5 @@
-idMapa,idZona,codigoComplejo,codigo,capacidad
-1,6,A,A1,80
-1,7,A,A2,40
-1,8,A,A3,80
-1,9,H,H1,25
+LugarId,Capacidad
+6,80
+7,40
+8,80
+9,25

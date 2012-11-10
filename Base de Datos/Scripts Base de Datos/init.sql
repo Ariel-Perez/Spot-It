@@ -1,198 +1,150 @@
 CREATE TABLE Usuario(
-id int IDENTITY(1,1),
-nombre nvarchar(60),
-apellido nvarchar(60),
-mail nvarchar(60),
-apodo nvarchar(60),
-fecha_registro datetime DEFAULT(getdate()),
-numComentarios int,
-numFotos int,
-numSugerenciasLugares int,
-numEventosCreados int,
-numEventosAsistidos int,
-numFavoritos int,
-numGenteInvitada int,
-CONSTRAINT "Usuario_pkey" PRIMARY KEY(id));
-
-CREATE TABLE Mapa(
-id int IDENTITY(1,1),
-nombre nvarchar(60),
-imagen varbinary(5000),
-fecha_creacion datetime DEFAULT(getdate()),
-CONSTRAINT "Mapa_pkey" PRIMARY KEY(id));
-
-CREATE TABLE Zona(
-idMapa int,
-id int IDENTITY(1,1),
-nombre nvarchar(100),
-fecha_creacion datetime DEFAULT(getdate()),
-CONSTRAINT "Zona_pkey" PRIMARY KEY(idMapa, id),
-CONSTRAINT "Zona_fkey" FOREIGN KEY(idMapa) references Mapa(id));
-
-CREATE TABLE Punto(
-idMapa int,
-idZona int,
-numPunto int, 
-x int,
-y int,
-CONSTRAINT "Punto_pkey" PRIMARY KEY(idMapa, idZona, numPunto),
-CONSTRAINT "Punto_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
-
-CREATE TABLE Construccion(
-idMapa int,
-idZona int,
-fecha_termino datetime,
-CONSTRAINT "Construccion_pkey" PRIMARY KEY(idMapa, idZona),
-CONSTRAINT "Construccion_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
-
-CREATE TABLE Lugar(
-idMapa int,
-idZona int,
-descripcion ntext,
-CONSTRAINT "Lugar_pkey" PRIMARY KEY(idMapa, idZona),
-CONSTRAINT "Lugar_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
-
-CREATE TABLE Evento(
-idMapa int,
-idZona int,
-nombre nvarchar(100),
-fecha_inicio datetime,
-fecha_termino datetime,
-link nvarchar(1024),
-CONSTRAINT "Evento_pkey" PRIMARY KEY(idMapa, idZona, nombre, fecha_inicio),
-CONSTRAINT "Evento_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
-
-CREATE TABLE Comentario(
-idMapa int,
-idZona int,
-idUsuario int,
-id int,
-fecha datetime DEFAULT(getdate()),
-texto ntext,
-CONSTRAINT "Comentario_pkey" PRIMARY KEY(idMapa, idZona, idUsuario, id),
-CONSTRAINT "Comentario_fkey1" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id),
-CONSTRAINT "Comentario_fkey2" FOREIGN KEY(idUsuario) references Usuario(id));
-
-CREATE TABLE Asiste(
-idMapa int,
-idZona int,
-nombreEvento nvarchar(100),
-fecha datetime,
-idUsuario int,
-rating float,
-CONSTRAINT "Asiste_pkey" PRIMARY KEY(idMapa, idZona, nombreEvento, fecha, idUsuario),
-CONSTRAINT "Asiste_fkey1" FOREIGN KEY(idMapa, idZona, nombreEvento, fecha) references Evento(idMapa, idZona, nombre, fecha_inicio),
-CONSTRAINT "Asiste_fkey2" FOREIGN KEY(idUsuario) references Usuario(id));
-
-CREATE TABLE Sugerencia_Lugar(
-idMapa int,
-nombre nvarchar(100),
-idUsuario int,
-x int,
-y int,
-fecha_creacion datetime DEFAULT(getdate()),
-texto ntext,
-CONSTRAINT "Sugerencia_Lugar_pkey" PRIMARY KEY(idMapa, nombre, idUsuario),
-CONSTRAINT "Sugerencia_Lugar_fk21" FOREIGN KEY(idMapa) references Mapa(id),
-CONSTRAINT "Sugerencia_Lugar_fk22" FOREIGN KEY(idUsuario) references Usuario(id));
-
-CREATE TABLE Favorito(
-idMapa int,
-idZona int,
-idUsuario int,
-fecha datetime DEFAULT(getdate()),
-CONSTRAINT "Favorito_pkey" PRIMARY KEY(idMapa, idZona, idUsuario),
-CONSTRAINT "Favorito_fkey1" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id),
-CONSTRAINT "Favorito_fkey3" FOREIGN KEY(idUsuario) references Usuario(id));
-
-CREATE TABLE Badge(
-nombre nvarchar(60),
-imagen varbinary(1024),
-numComentarios int,
-numFotos int,
-numSugerenciasLugares int,
-numEventosCreados int,
-numEventosAsistidos int,
-numFavoritos int,
-numGenteInvitada int,
-CONSTRAINT "Badge_pkey" PRIMARY KEY(nombre));
-
-CREATE TABLE Premio(
-idUsuario int,
-nombreMedalla nvarchar(60),
-fecha datetime DEFAULT(getdate()),
-CONSTRAINT "Premio_pkey" PRIMARY KEY(idUsuario, nombreMedalla),
-CONSTRAINT "Premio_fkey1" FOREIGN KEY(idUsuario) references Usuario(id),
-CONSTRAINT "Premio_fkey2" FOREIGN KEY(nombreMedalla) references Badge(nombre));
-
-CREATE TABLE Categoria(
-nombre nvarchar(100),
-CONSTRAINT "Categoria_pkey" PRIMARY KEY(nombre));
-
-CREATE TABLE Lugar_En_Categoria(
-idMapa int,
-idZona int,
-nombreCategoria nvarchar(100),
-CONSTRAINT "Lugar_En_Categoria_pkey" PRIMARY KEY(idMapa, idZona, nombreCategoria),
-CONSTRAINT "Lugar_En_Categoria_fkey1" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
-
-CREATE TABLE Foto(
-idMapa int,
-idZona int,
-id int IDENTITY(1,1),
-foto varbinary(5000),
-CONSTRAINT "Foto_pkey" PRIMARY KEY(idMapa, idZona, id),
-CONSTRAINT "Foto_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
-
-CREATE TABLE Complejo(
-idMapa int,
-idZona int,
-codigo nvarchar(60),
-CONSTRAINT "Complejo_pkey" PRIMARY KEY(idMapa, codigo),
-CONSTRAINT "Complejo_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
-
-CREATE TABLE Sala(
-idMapa int,
-idZona int,
-codigoComplejo nvarchar(60),
-codigo nvarchar(60),
-capacidad int,
-CONSTRAINT "Sala_pkey" PRIMARY KEY(idMapa, codigo),
-CONSTRAINT "Sala_fkey1" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id),
-CONSTRAINT "Sala_fkey2" FOREIGN KEY(idMapa, codigoComplejo) references Complejo(idMapa, codigo));
+Id int IDENTITY(1,1),
+Nombre nvarchar(60),
+Apellido nvarchar(60),
+Mail nvarchar(60),
+Apodo nvarchar(60),
+FechaRegistro datetime DEFAULT(getdate()),
+NumComentarios int,
+NumFotos int,
+NumSugerenciasLugares int,
+NumEventosCreados int,
+NumEventosAsistidos int,
+NumFavoritos int,
+NumGenteInvitada int,
+CONSTRAINT "Usuario_pkey" PRIMARY KEY(Id));
 
 CREATE TABLE Facultad(
-idMapa int,
-idZona int,
-nombre nvarchar(100),
-CONSTRAINT "Facultad_pkey" PRIMARY KEY(idMapa, nombre),
-CONSTRAINT "Facultad_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
+Id int IDENTITY(1,1),
+Nombre nvarchar(100),
+CONSTRAINT "Facultad_pkey" PRIMARY KEY(Id));
+
+CREATE TABLE Lugar(
+Id int IDENTITY(1,1),
+Nombre nvarchar(100),
+Descripcion ntext,
+LugarId int,
+FacultadId int,
+CONSTRAINT "Lugar_pkey" PRIMARY KEY(Id),
+CONSTRAINT "Lugar_fkey" FOREIGN KEY(LugarId) references Lugar(Id),
+CONSTRAINT "Lugar_fkey2" FOREIGN KEY(FacultadId) references Facultad(Id));
+
+CREATE TABLE Punto(
+LugarId int,
+NumPunto int,
+X int,
+Y int,
+CONSTRAINT "Punto_pkey" PRIMARY KEY(LugarId, NumPunto),
+CONSTRAINT "Punto_fkey" FOREIGN KEY(LugarId) references Lugar(Id));
+
+
+CREATE TABLE Evento(
+Id int IDENTITY(1,1),
+Nombre nvarchar(100),
+FechaInicio datetime,
+FechaTermino datetime,
+LinkFacebook nvarchar(200),
+LugarId int,
+X int,
+Y int,
+CONSTRAINT "Evento_pkey" PRIMARY KEY(Id),
+CONSTRAINT "Evento_fkey" FOREIGN KEY(LugarId) references Lugar(Id));
+
+CREATE TABLE Comentario(
+LugarId int,
+Numero int,
+UsuarioId int,
+Fecha datetime DEFAULT(getdate()),
+Texto ntext,
+CONSTRAINT "Comentario_pkey" PRIMARY KEY(LugarId, Numero),
+CONSTRAINT "Comentario_fkey1" FOREIGN KEY(LugarId) references Lugar(Id),
+CONSTRAINT "Comentario_fkey2" FOREIGN KEY(UsuarioId) references Usuario(Id));
+
+CREATE TABLE Asiste(
+EventoId int,
+UsuarioId int,
+Rating float,
+CONSTRAINT "Asiste_pkey" PRIMARY KEY(EventoId, UsuarioId),
+CONSTRAINT "Asiste_fkey1" FOREIGN KEY(EventoId) references Evento(Id),
+CONSTRAINT "Asiste_fkey2" FOREIGN KEY(UsuarioId) references Usuario(Id));
+
+CREATE TABLE Favorito(
+LugarId int,
+UsuarioId int,
+Fecha datetime DEFAULT(getdate()),
+CONSTRAINT "Favorito_pkey" PRIMARY KEY(LugarId, UsuarioId),
+CONSTRAINT "Favorito_fkey1" FOREIGN KEY(LugarId) references Lugar(Id),
+CONSTRAINT "Favorito_fkey2" FOREIGN KEY(UsuarioId) references Usuario(Id));
+
+CREATE TABLE Medalla(
+Id int IDENTITY(1,1),
+Nombre nvarchar(60),
+Imagen nvarchar(200),
+NumComentarios int,
+NumFotos int,
+NumSugerenciasLugares int,
+NumEventosCreados int,
+NumEventosAsistidos int,
+NumFavoritos int,
+NumGenteInvitada int,
+CONSTRAINT "Medalla_pkey" PRIMARY KEY(Id));
+
+CREATE TABLE Premio(
+UsuarioId int,
+MedallaId int,
+Fecha datetime DEFAULT(getdate()),
+CONSTRAINT "Premio_pkey" PRIMARY KEY(UsuarioId, MedallaId),
+CONSTRAINT "Premio_fkey1" FOREIGN KEY(UsuarioId) references Usuario(Id),
+CONSTRAINT "Premio_fkey2" FOREIGN KEY(MedallaId) references Medalla(Id));
+
+CREATE TABLE Categoria(
+Id int Identity(1,1),
+Nombre nvarchar(100),
+CONSTRAINT "Categoria_pkey" PRIMARY KEY(Id));
+
+CREATE TABLE LugarCategoria(
+CategoriaId int,
+LugarId int,
+CONSTRAINT "LugarCategoria_pkey" PRIMARY KEY(CategoriaId, LugarId),
+CONSTRAINT "LugarCategoria_fkey" FOREIGN KEY(CategoriaId) references Categoria(Id),
+CONSTRAINT "LugarCategoria_fkey2" FOREIGN KEY(LugarId) references Lugar(Id));
+
+CREATE TABLE Foto(
+LugarId int,
+Numero int,
+Imagen nvarchar(200),
+CONSTRAINT "Foto_pkey" PRIMARY KEY(LugarId, Numero),
+CONSTRAINT "Foto_fkey" FOREIGN KEY(LugarId) references Lugar(Id));
+
+CREATE TABLE Sala(
+LugarId int,
+Capacidad int,
+CONSTRAINT "Sala_pkey" PRIMARY KEY(LugarId),
+CONSTRAINT "Sala_fkey1" FOREIGN KEY(LugarId) references Lugar(Id));
 
 CREATE TABLE Departamento(
-idMapa int,
-nombreFacultad nvarchar(100),
-nombre nvarchar(100),
-CONSTRAINT "Departamento_pkey" PRIMARY KEY(idMapa, nombreFacultad, nombre),
-CONSTRAINT "Departamento_fkey" FOREIGN KEY(idMapa, nombreFacultad) references Facultad(idMapa, nombre));
+Id int,
+FacultadId int,
+Nombre nvarchar(100),
+CONSTRAINT "Departamento_pkey" PRIMARY KEY(Id, FacultadId),
+CONSTRAINT "Departamento_fkey" FOREIGN KEY(FacultadId) references Facultad(Id));
 
 CREATE TABLE Autoridad(
-idMapa int,
-id int IDENTITY(1, 1),
-idZona int,
-nombre nvarchar(100),
-apellido nvarchar(100),
-mail nvarchar(100),
-CONSTRAINT "Autoridad_pkey" PRIMARY KEY(idMapa, id),
-CONSTRAINT "Autoridad_fkey" FOREIGN KEY(idMapa, idZona) references Zona(idMapa, id));
+Id int IDENTITY(1, 1),
+Nombre nvarchar(100),
+Apellido nvarchar(100),
+Mail nvarchar(100),
+X int,
+Y int,
+CONSTRAINT "Autoridad_pkey" PRIMARY KEY(Id));
 
 CREATE TABLE TrabajaEn(
-idMapa int,
-nombreFacultad nvarchar(100),
-nombreDepto nvarchar(100),
-idAutoridad int,
-cargo nvarchar(100),
-CONSTRAINT "TrabajaEn_pkey" PRIMARY KEY(idMapa, nombreFacultad, nombreDepto, idAutoridad),
-CONSTRAINT "TrabajaEn_fkey1" FOREIGN KEY(idMapa, nombreFacultad) references Facultad(idMapa, nombre),
-CONSTRAINT "TrabajaEn_fkey2" FOREIGN KEY(idMapa, nombreFacultad, nombreDepto) references Departamento(idMapa, nombreFacultad, nombre),
-CONSTRAINT "TrabajaEn_fkey3" FOREIGN KEY(idMapa, idAutoridad) references Autoridad(idMapa, id));
+FacultadId int,
+AutoridadId int,
+DepartamentoId int,
+Cargo nvarchar(100),
+CONSTRAINT "TrabajaEn_pkey" PRIMARY KEY(FacultadId, AutoridadId, DepartamentoId),
+CONSTRAINT "TrabajaEn_fkey1" FOREIGN KEY(FacultadId) references Facultad(Id),
+CONSTRAINT "TrabajaEn_fkey2" FOREIGN KEY(AutoridadId) references Autoridad(Id),
+CONSTRAINT "TrabajaEn_fkey3" FOREIGN KEY(DepartamentoId, FacultadId) references Departamento(Id, FacultadId));
 
