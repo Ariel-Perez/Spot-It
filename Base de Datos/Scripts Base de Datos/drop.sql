@@ -12,6 +12,7 @@ DROP TABLE Asiste;
 DROP TABLE Comentario;
 DROP TABLE Evento;
 DROP TABLE Punto;
+DROP TABLE Horario;
 DROP TABLE Lugar;
 DROP TABLE Facultad;
 DROP TABLE Usuario;

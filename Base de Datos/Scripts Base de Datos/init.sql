@@ -123,7 +123,7 @@ CONSTRAINT "Sala_pkey" PRIMARY KEY(LugarId),
 CONSTRAINT "Sala_fkey1" FOREIGN KEY(LugarId) references Lugar(Id));
 
 CREATE TABLE Departamento(
-Id int,
+Id int Identity(1,1),
 FacultadId int,
 Nombre nvarchar(100),
 CONSTRAINT "Departamento_pkey" PRIMARY KEY(Id, FacultadId),
@@ -148,3 +148,12 @@ CONSTRAINT "TrabajaEn_fkey1" FOREIGN KEY(FacultadId) references Facultad(Id),
 CONSTRAINT "TrabajaEn_fkey2" FOREIGN KEY(AutoridadId) references Autoridad(Id),
 CONSTRAINT "TrabajaEn_fkey3" FOREIGN KEY(DepartamentoId, FacultadId) references Departamento(Id, FacultadId));
 
+CREATE TABLE Horario(
+LugarId int,
+Modulo int,
+Dia nvarchar(10),
+curso nvarchar(100),
+tipo_actividad nvarchar(100),
+fecha_ingreso datetime,
+CONSTRAINT "Horario_pkey" PRIMARY KEY(LugarId,Modulo,Dia),
+CONSTRAINT "Horario_fkey1" FOREIGN KEY(LugarId) references Lugar(Id));
