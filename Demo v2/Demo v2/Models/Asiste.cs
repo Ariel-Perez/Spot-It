@@ -7,12 +7,12 @@ using System.Text;
 
 namespace Demo_v2.Models
 {
-    public class Sala
+    public class Asiste
     {
-        public virtual int LugarId { get; set; }
-        public virtual int Capacidad { get; set; }
-
-        public virtual Lugar Lugar { get; set; }
-
+        [Key, Column(Order = 0)]
+        public int EventoId { get; set; }
+        [Key, Column(Order = 1)]
+        public int UsuarioId { get; set; }        
+        public float Rating { get; set; }
     }
 }

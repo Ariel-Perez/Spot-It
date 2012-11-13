@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data.Entity;
-using System.ComponentModel.DataAnnotations; 
 
 namespace Demo_v2.Models
 {
-    public class Categoria
+    public class Facultad
     {
         public virtual int Id { get; set; }
         public virtual string Nombre { get; set; }
 
+        public virtual List<Departamento> Departamento { get; set; }
         public virtual List<Lugar> Lugar { get; set; }
+        public virtual List<TrabajaEn> TrabajaEn { get; set; }
     }
 }

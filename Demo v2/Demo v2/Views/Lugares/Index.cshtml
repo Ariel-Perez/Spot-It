@@ -1,12 +1,15 @@
 ﻿@model IEnumerable<Demo_v2.Models.Categoria>
+
 @{
-    ViewBag.title = "Lugar";
+    ViewBag.Title = "Index";
 }
-<h2>@Model.Count() Categorías:</h2>
-<u>
-    @foreach (var cat in Model)
+
+<h2>This is the Map Controller!</h2>
+
+<h3>Buscar por Categoría</h3>
+<ol>
+    @foreach(var cat in Model)
     {
-        <a href="Lugares/Categorias/@cat.nombre"><li>@cat.nombre</li></a>
-        
+        <li>@Html.ActionLink(cat.Nombre, "Search", new { categoriaId = cat.Id })</li>
     }
-</u>
+</ol>

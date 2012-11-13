@@ -1,0 +1,45 @@
+﻿@model Demo_v2.Models.Lugar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Nombre</h2>
+<br />
+<p>@Model.Descripcion</p>
+<br />
+@if (Model.Comentario.Count > 0)
+{
+    <h3>Comentarios</h3>
+    <table>
+        <tr>
+            <td>N°</td>
+            <td>Comentario</td>
+        </tr>
+        @foreach (var coment in Model.Comentario)
+        {
+            <tr>
+                <td>@coment.Num</td>
+                <td>@coment.Texto</td>
+            </tr>
+        }
+    </table>
+}
+@if (Model.Comentario.Count == 0)
+{
+    <p>Sin comentarios.</p>
+}
+
+<br />
+<h3>Categorías</h3>
+<ul>
+    @foreach (var categoria in Model.Categoria)
+    {
+        <li>@categoria.Nombre</li>
+    }
+</ul>
+
+<br />
+<br />
+<hr />
+@Html.ActionLink("Volver", "Index")

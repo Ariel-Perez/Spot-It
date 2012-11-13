@@ -9,35 +9,33 @@ namespace Demo_v2.Controllers
 {
     public class LugaresController : Controller
     {
-        SpotItEntities spotItDB = new SpotItEntities();
-
+        SpotItEntities db = new SpotItEntities();
 
         //
         // GET: /Lugares/
-        public ActionResult Lugar(int id, int idMapa)
-        {
-            var lugares = spotItDB.Lugar.ToList();
-            return View(lugares);
-        }
-        public ActionResult browserlugar(int id, int idMapa)
-        {
-            var lugar = spotItDB.Lugar.Find(id, idMapa);
-            return View(lugar);
-        }
-
-
 
         public ActionResult Index()
         {
-            var categorias = spotItDB.Categoria.ToList();
+            var categorias = db.Categoria.ToList();
             return View(categorias);
         }
-        
-        public ActionResult Browse(string categoria)
+
+        //
+        // GET: /Lugares/Search?categoriaId=1
+
+        public ActionResult Search(int categoriaId)
         {
-            var aux = spotItDB.Categoria.Find(categoria);
-            return View(aux);
+            var cat = db.Categoria.Single(a => a.Id == categoriaId);
+            return View(cat);
         }
 
+        //
+        // GET: /Lugares/Details?idLugar=3
+
+        public ActionResult Details(int idLugar)
+        {
+            var lugar = db.Lugar.Single(a => a.Id == idLugar);
+            return View(lugar);
+        }
     }
 }

@@ -174,14 +174,35 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Autoridad.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Comentario.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Departamento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Facultad.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\Lugar.cs" />
-    <Compile Include="Models\Lugar_En_Categoria.cs" />
-    <Compile Include="Models\Sala.cs" />
+    <Compile Include="Models\Punto.cs" />
+    <Compile Include="Models\Sala.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\SpotItEntities.cs" />
+    <Compile Include="Models\TrabajaEn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Usuario.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\New Database.sdf" />
     <Content Include="Content\Propuesta\images\6.png" />
     <Content Include="Content\Propuesta\images\7.png" />
     <Content Include="Content\Propuesta\images\9.png" />
@@ -311,9 +332,7 @@
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -323,10 +342,9 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\asdf.pubxml" />
     <Content Include="Views\Lugares\Index.cshtml" />
-    <Content Include="Views\Lugares\Browse.cshtml" />
-    <Content Include="Views\Lugares\Categorias\Comida.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Lugares\Lugar.cshtml" />
+    <Content Include="Views\Lugares\Search.cshtml" />
+    <Content Include="Views\Lugares\Details.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

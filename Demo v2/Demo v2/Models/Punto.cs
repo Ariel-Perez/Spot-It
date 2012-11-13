@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text;
+using System.Web;
 
 namespace Demo_v2.Models
 {
-    public class Sala
+    public class Punto
     {
         public virtual int LugarId { get; set; }
-        public virtual int Capacidad { get; set; }
+        public virtual int NumPunto { get; set; }
+        public virtual int X { get; set; }
+        public virtual int Y { get; set; }
 
         public virtual Lugar Lugar { get; set; }
-
     }
 }
