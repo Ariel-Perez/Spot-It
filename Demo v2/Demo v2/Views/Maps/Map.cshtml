@@ -9,10 +9,14 @@
       body {
         margin: 0px;
         padding: 0px;
+        background-color:#FFFFFF;
       }
       canvas {
         border: 1px solid #4FB797;
+        
       }
+      
+      
       #tango {
         position: absolute;
         top: 10px;
@@ -28,7 +32,11 @@
         height: 500px;
         width: 800px;
         background-position: 1px 1px;
+        position: relative;
+        left: 20%;
       }
+      
+      
       
       #contextMenu {
 width:120px
@@ -75,6 +83,7 @@ padding:1px
               tooltip.show();
               tooltip.getLayer().draw();
           }
+
 
           window.onload = function () {
               var stage = new Kinetic.Stage({
@@ -194,10 +203,11 @@ padding:1px
               stage.add(tooltipLayer);
           };
       </script>
-   <center><div id="container"></div>
+    <div id="container"></div>
 
     <div id="contextMenu" style="display:none">
         <div id="contextMenuH"></div>
         <div id="contextMenuB"></div>
-    </div></div></center>
+    </div></div>
+    
    <br /><br />
