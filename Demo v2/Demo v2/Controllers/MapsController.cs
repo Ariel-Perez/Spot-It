@@ -16,5 +16,13 @@ namespace Demo_v2.Controllers
             return View();
         }
 
+        public ActionResult place()
+        {
+            ViewBag.Message = "Main map";
+            return View();
+        }
+
+
+
     }
 }

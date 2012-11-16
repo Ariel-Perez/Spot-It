@@ -218,6 +218,7 @@
     <Content Include="Scripts\InteractiveMapData.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\kinetic-v3.9.7.js" />
+    <Content Include="Scripts\salasA.js" />
     <Content Include="Scripts\worldMap.js" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Content\Propuesta\images\uc2.png" />
@@ -345,6 +346,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Lugares\Search.cshtml" />
     <Content Include="Views\Lugares\Details.cshtml" />
+    <None Include="Views\Maps\place.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
