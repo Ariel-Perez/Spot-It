@@ -23,20 +23,32 @@ namespace Demo_v2.Controllers
 
             return View();
         }
-
-
-        [HttpGet]
         public ActionResult Search()
         {
 
             return View();
         }
 
-        public ActionResult Search2(string nombre)
+        public ActionResult Search2(string nombre,string tipo)
         {
+            if (tipo == "Lugar")
+            {
+                var lug = db.Lugar.Single(a => a.Nombre == nombre);
+                return View(lug);
+            }
+            else if (tipo == "Sala")
+            {
+                var lug = db.Lugar.Single(a => a.Nombre == nombre);
+                return View(lug);
+            }
+            else
+            {
+                var lug = from Autoridad in db.Autoridad
+                          where Autoridad.Apellido.Contains(nombre) || Autoridad.Nombre.Contains(nombre)
+                          select Autoridad;
+                return View(lug);
 
-            var lug = db.Lugar.Single(a => a.Nombre== nombre);
-            return View(lug);
+            }
 
         }
     }
