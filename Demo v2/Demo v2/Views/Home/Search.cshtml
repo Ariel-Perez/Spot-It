@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="wrapper">
+
+	
+    <br /><br />
+
+<form action="/Home/search_results">
+  <input type="text" name="nombre" id="search" placeholder="Busqueda" required/><br>
+  <input type="radio" name=tipo value="Lugar" checked> Lugar
+  <input type="radio" name=tipo value="Sala"> Sala
+  <input type="radio" name=tipo value="Autoridad"> Autoridad
+  <input type="submit" value="Submit" />
+
+</form>
+</div>
+
+<br />
+<br />
+<hr />
+
+    

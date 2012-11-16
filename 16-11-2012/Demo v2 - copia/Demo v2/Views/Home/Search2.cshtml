@@ -1,0 +1,15 @@
+﻿@model Demo_v2.Models.Lugar
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Buscando resultados para @Model.Nombre </h2>
+<ol>
+    @Model.Nombre<br />
+    @Model.Descripcion<br />
+</ol>
+<br />
+<br />
+<hr />
+@Html.ActionLink("Volver", "/Search")

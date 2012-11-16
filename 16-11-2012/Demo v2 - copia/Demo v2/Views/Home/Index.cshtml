@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Spot it";
+}
+
+<!-- Se presenta el logo general de Spot it y breve funcionamiento de la web-->
+<section class="home_feature">
+	<div class="wrapper">
+		<article class="main_display">
+			<div align="left"><img width="450" height="300" src="images/logo1.png" alt="Spot it" title="Spot it" /></div>
+			<div class="display_gloss"></div>
+			<article class="banner_new"><p>New</p></article>
+		</article>
+		<article class="feature_text">
+			<h2>¿Andas perdido? ¿Quieres encontrar tu facultad? ¡Allons-y!</h2>
+			<p>El campus San Joaquín se caracteriza por ser la sede más grande de la universidad. Pero no te preocupes, ahora jamás volverás a perderte, revisa el mapa de Spot it y ¡encuentra tu lugar!</p>
+			<a @Html.ActionLink("Visita el Mapa", "Map", "Maps")</a>
+		</article>
+
+
+	</div><!--.wrapper-->
+
+    <!-- Los links generales con sus respectivas explicaciones, los ejes de funcionamiento -->
+</section>
+<ul class="featured_services">
+<!-- Búsqueda de lugares-->
+	<li class="service_1">
+		<h3>Lugares</h3>
+		<p>Encuentra las facultades, salas, y más. Nunca volverás a llegar tarde a clases.</p>
+		<a href="Lugares" class="button_1">Informaci&oacute;n</a>
+	</li>
+    <!--Búsqueda de autoridades -->
+	<li class="service_2">
+		<h3>Autoridades</h3>
+		<p>¿Buscas a la secretaria de alguna facultad? ¿Quieres saber dónde está la Feuc?</p>
+		<a href="#" class="button_1">Informaci&oacute;n</a>
+	</li>
+    <!-- Búsqueda de eventos-->
+	<li class="service_3">
+		<h3>Eventos</h3>
+		<p>Revisa todo lo que pasará en el campus y dónde se desarrollará la actividad.</p>
+		<a href="#" class="button_1">Informaci&oacute;n</a>
+	</li>
+
+</ul>
+  <!--Social Widget
+				
+				<article class="widget_social">
+					<ul>
+						<li class="facebook"><a href="#">FaceBook</a></li>
+						<li class="twitter"><a href="#">Twitter</a></li>
+						<li class="tumblr"><a href="#">Tumblr</a></li>
+					</ul>
+				</article>-->
+<!--
+<div class="wrapper">
+			<article class="about_us_blurb">
+				<About Us&rt;
+				<img src="images/about_us.png" />
+				<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Penatibus et magnis dis parturient montes, nascetur ridiculu.</p>
+				<p>Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</article>
+				
+			<article class="testimonials">
+				<Testimonials&rt;
+				<div class="testimonial_wrapper">
+					<p class="testimonial_quote">
+						Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. </p>
+					<p class="testimonial_name">John Doe, Company</p>
+				</div>		
+			</article>
+		</div><!--.wrapper-->
+
+
+			
+
+						
+<!--Feedback Widget
+			
+			<div class="column">
+				<article class="widget_feedback">
+					<h4>Feedback</h4>
+					<form>
+						<input type="text" value="Nombre" name="name">
+						<input type="text" value="Email" name="email">
+						<textarea name="message">Tu mensaje</textarea>
+						<input type="submit" value="Enviar mensaje" class="button_1">
+					</form>
+				</article>
+			</div>-->
+		
+

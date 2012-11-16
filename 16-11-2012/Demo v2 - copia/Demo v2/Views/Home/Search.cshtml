@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Demo_v2.Models.Lugar>
+@{
+    ViewBag.Title = "Search";
+}
+
+<!-- Por ahora no usaremos esto-->
+
+<div class="wrapper">
+
+	
+    <br /><br />
+
+<form action="/Home/Search2">
+  <input type="text" name="nombre" id="search" placeholder="Busqueda" required/><br>
+  <input type="submit" value="Submit" />
+
+</form>
+</div>
+    @if(Request.QueryString.Get("LugarId")!=null)
+    {   <h2>Buscando resultados para search</h2>
+        foreach (var lugar in @Model)
+        {
+            <o>@lugar.Id</o>
+        }
+            
+    }
+<br />
+<br />
+<hr />
+
+    

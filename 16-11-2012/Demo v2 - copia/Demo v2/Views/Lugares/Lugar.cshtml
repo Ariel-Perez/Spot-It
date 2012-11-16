@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Demo_v2.Models.Lugar>
+@{
+    ViewBag.Title = "Lugar";
+    var id2 = Request.QueryString.GetValues("id");
+    var id_mapa2 = Request.QueryString.GetValues("idMapa");
+}
+<h2>Lugar</h2>
+<ul>
+    @foreach (var cat in Model)
+    {
+        if (cat.idZona == id2[0].AsInt() && cat.idMapa == id_mapa2[0].AsInt())
+        {
+            <p>@cat.descripcion</p>
+        }
+    }
+
+</ul>
+<p></p> 

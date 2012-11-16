@@ -1,0 +1,17 @@
+﻿@model Demo_v2.Models.Categoria
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Buscando resultados para @Model.Nombre</h2>
+<ol>
+    @foreach (var lugar in @Model.Lugar)
+    {
+        <li>@Html.ActionLink(lugar.Nombre, "Details", new {idLugar = lugar.Id})</li>
+    }
+</ol>
+<br />
+<br />
+<hr />
+@Html.ActionLink("Volver", "Index")

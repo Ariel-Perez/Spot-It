@@ -346,6 +346,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Lugares\Search.cshtml" />
     <Content Include="Views\Lugares\Details.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Home\search_results.cshtml" />
     <None Include="Views\Maps\place.cshtml" />
   </ItemGroup>
   <PropertyGroup>
