@@ -32,7 +32,18 @@
         left: 20%;
       }
       
-      
+      #containerMap
+      {
+          /*La imagen más importante, el mapa de San Joaquín, irá de fondo*/
+        background-image: url('http://i45.tinypic.com/2q2q0qp.jpg');
+        display: inline-block;
+        overflow: hidden;
+        height: 500px;
+        width: 800px;
+        background-position: 1px 1px;
+        position: relative;
+        left: 5%;
+      }
       
       #contextMenu {
 width:120px
@@ -86,6 +97,30 @@ padding:1px
                   height: 422
               });
               var shapesLayer = new Kinetic.Layer();
+
+              var smap = new Kinetic.Stage({
+          container: "containerMap",
+          width: 578,
+          height: 200
+        });
+
+        var layer = new Kinetic.Layer();
+
+        var poly = new Kinetic.Polygon({
+          points: [73, 192, 73, 160, 340, 23, 500, 109, 499, 139, 342, 93],
+          fill: "#00D2FF",
+          stroke: "black",
+          strokeWidth: 5
+        });
+
+        // add the shape to the layer
+        layer.add(poly);
+
+        // add the layer to the stage
+        stage.add(layer);
+      };
+
+
               /*
               * throttle the tooltip layer down a bit
               * so that the tooltip doesn't lag behind the
@@ -105,7 +140,7 @@ padding:1px
                   fill: "black",
                   visible: false,
                   alpha: 0.75
-              });
+              });,
 
               tooltipLayer.add(tooltip);
 

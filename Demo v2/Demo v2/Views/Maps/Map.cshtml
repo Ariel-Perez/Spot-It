@@ -68,11 +68,15 @@ padding:1px
     </style>
     <script type="text/javascript" src="http://www.html5canvastutorials.com/libraries/kinetic-v4.0.0.js"></script>
 <script src="../../Scripts/kinetic-v3.9.7.js" type="text/javascript"></script>
-    <script type="text/javascript" src="http://www.html5canvastutorials.com/demos/assets/worldMap.js"></script>
 <script src="../../Scripts/jquery.min.js" type="text/javascript"></script>
-<script src="../../Scripts/worldMap.js" type="text/javascript"></script>
 <script src="../../Scripts/InteractiveMapData.js" type="text/javascript"></script>
       <script>
+
+      budcadas;
+
+for (i = 0, total = buscadas.length; i &lt; total; i++)
+	mostrarArea(buscadas[i]);
+
           function drawTooltip(tooltip, x, y, text) {
               tooltip.setText(text);
               var maxRight = 530;
@@ -202,6 +206,18 @@ padding:1px
               stage.add(shapesLayer);
               stage.add(tooltipLayer);
           };
+
+
+
+          function ocultarArea(cual) {
+              document.images[cual].style.visibility = "hidden";
+              document.anchors[cual].style.backgroundColor = "transparent";
+          }
+          function mostrarArea(cual) {
+              document.images[cual].style.visibility = "visible";
+              document.anchors[cual].style.backgroundColor = "yellow";
+          }
+
       </script>
     <div id="container"></div>
 
