@@ -51,5 +51,9 @@ namespace Demo_v2.Controllers
             }
 
         }
+        public ActionResult Salas()
+        {
+            return View();
+        }
     }
 }

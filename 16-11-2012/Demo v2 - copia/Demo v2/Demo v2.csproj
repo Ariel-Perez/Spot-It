@@ -346,6 +346,7 @@
     <Content Include="Views\Lugares\Search.cshtml" />
     <Content Include="Views\Lugares\Details.cshtml" />
     <Content Include="Views\Home\Search2.cshtml" />
+    <Content Include="Views\Home\Salas.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
