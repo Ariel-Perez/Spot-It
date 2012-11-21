@@ -16,5 +16,12 @@ namespace Demo_v2.Controllers
             return View();
         }
 
+        //
+        // GET: /Maps/place
+        public ActionResult place()
+        {
+            return View();
+        }
+
     }
 }
