@@ -202,7 +202,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\New Database.sdf" />
     <Content Include="Content\Propuesta\images\6.png" />
     <Content Include="Content\Propuesta\images\7.png" />
     <Content Include="Content\Propuesta\images\9.png" />
@@ -333,7 +332,9 @@
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
