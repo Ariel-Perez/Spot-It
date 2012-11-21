@@ -540,6 +540,8 @@ th {
     text-align: left;
     border: none 0px;
     padding-left: 0;
+    vertical-align:middle;
+    height:2em;
 }
 
     th a {
@@ -578,7 +580,10 @@ th {
         content: '▼';
     }
 
-td {
+td 
+{
+    text-align:center;
+    vertical-align:middle;
     padding: 0.25em 2em 0.25em 0em;
     border: 0 none;
 }

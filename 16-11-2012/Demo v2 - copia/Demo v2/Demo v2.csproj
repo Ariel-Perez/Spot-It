@@ -169,6 +169,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LugaresController.cs" />
     <Compile Include="Controllers\MapsController.cs" />
+    <Compile Include="Controllers\SalasController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -349,6 +350,7 @@
     <Content Include="Views\Home\Search2.cshtml" />
     <Content Include="Views\Home\Salas.cshtml" />
     <Content Include="Views\Maps\place.cshtml" />
+    <Content Include="Views\Salas\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
