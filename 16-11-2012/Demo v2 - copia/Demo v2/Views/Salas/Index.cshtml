@@ -5,11 +5,12 @@
 <h1>Buscador de Salas Vacías</h1>
 
 
-<div style="width:40%;float:left">
+<div style="width:40%;float:left;text-align:center; vertical-align:middle">
 	<h2>Seleccione los horarios en que necesita la sala</h2>
     <br />
-	<table >
+	<table style="width:80%">
 		<tr>
+            <th>Módulo</th>
 			<th>Horario</th>
 			<th>L</th>
 			<th>M</th>
@@ -24,7 +25,6 @@
                 "08.30-09.50",
                 "10.00-11.20",
                 "11.30-12.50",
-                "12.50-14.00",
                 "14.00-15.20",
                 "15.30-16.50",
                 "17.00-18.20",
@@ -32,21 +32,25 @@
                 "20.00-21.20"  
             };
         }
-        @for (int i = 1; i <= 9; i++)
+        @for (int i = 1; i <= 8; i++)
         {
             <tr>
-                <td style="text-align:center; vertical-align:middle">@horarios[i - 1]</td>
+                <td>@i</td>
+                <td>@horarios[i - 1]</td>
                 
-                @if (i != 4)
+                @for (int j = 1; j <= 6; j++)
                 {
-                    for (int j = 1; j <= 6; j++)
-                    {
-                        <td style="text-align:center; vertical-align:middle"><input type="checkbox" name="modulo"/></td>
-                    }
+                    string checkBoxName = "dia_" + j + "mod_" + i;
+                    <td><input type="checkbox" name=@checkBoxName/></td>
                 }
-                else
-                {
-                    <td colspan="6" style="text-align:center;vertical-align:middle">A L M U E R Z O</td>
+                    
+                @if (i == 3)
+                {   
+                    <tr>
+                        <td></td>
+                        <td>12.50-14.00</td>
+                        <td colspan="6"><pre><b>A   L   M   U   E   R   Z   O</b></pre></td>
+                    </tr>
                 }
             </tr>
         }
