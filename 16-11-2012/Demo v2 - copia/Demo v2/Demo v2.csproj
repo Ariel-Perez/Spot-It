@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -188,6 +189,7 @@
     <Compile Include="Models\Facultad.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Horario.cs" />
     <Compile Include="Models\Lugar.cs" />
     <Compile Include="Models\Punto.cs" />
     <Compile Include="Models\Sala.cs">
@@ -351,6 +353,7 @@
     <Content Include="Views\Home\Salas.cshtml" />
     <Content Include="Views\Maps\place.cshtml" />
     <Content Include="Views\Salas\Index.cshtml" />
+    <Content Include="Views\Salas\Search.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -368,7 +371,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54791</DevelopmentServerPort>
+          <DevelopmentServerPort>15976</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

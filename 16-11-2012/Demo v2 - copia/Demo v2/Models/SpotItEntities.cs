@@ -15,6 +15,7 @@ namespace Demo_v2.Models
         public DbSet<Facultad> Facultad { get; set; }
         public DbSet<Departamento> Departamento { get; set; }
         public DbSet<Autoridad> Autoridad { get; set; }
+        public DbSet<Horario> Horario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -35,6 +36,7 @@ namespace Demo_v2.Models
             modelBuilder.Entity<Departamento>().HasKey(obj => new { obj.DepartamentoId, obj.FacultadId });
             modelBuilder.Entity<TrabajaEn>().HasKey(obj => new { obj.FacultadId, obj.AutoridadId, obj.DepartamentoId });
             modelBuilder.Entity<Sala>().HasKey(obj => new { obj.LugarId });
+            modelBuilder.Entity<Horario>().HasKey(obj => new { obj.LugarId, obj.Modulo, obj.Dia });
         }
     }
 }

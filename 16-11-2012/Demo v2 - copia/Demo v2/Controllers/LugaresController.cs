@@ -9,7 +9,7 @@ namespace Demo_v2.Controllers
 {
     public class LugaresController : Controller
     {
-        SpotItEntities db = new SpotItEntities();
+        public static SpotItEntities db = new SpotItEntities();
 
         //
         // GET: /Lugares/

@@ -12,7 +12,6 @@ namespace Demo_v2.Models
         public virtual int LugarId { get; set; }
         public virtual int Capacidad { get; set; }
 
-        public virtual Lugar Lugar { get; set; }
-
+        public virtual List<Horario> Horario { get; set; }
     }
 }
