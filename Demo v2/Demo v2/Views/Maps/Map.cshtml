@@ -75,7 +75,20 @@ padding:1px
 //      budcadas;
 
 //for (i = 0, total = buscadas.length; i &lt; total; i++)
-//	mostrarArea(buscadas[i]);
+          //	mostrarArea(buscadas[i]);
+
+function mostrarSelect(){
+areas = [
+	"Cai",
+	"Baticristo",
+	"Olimpo"
+];
+for (i = 0, total = areas.length; i &lt; total; i++)
+	areas[i].setFill('yellow');
+    areas[i].setAlpha(0.5);
+    shapesLayer.draw();;
+
+}
 
           function drawTooltip(tooltip,  x, y, text) {
               tooltip.setText(text);
@@ -181,6 +194,20 @@ padding:1px
                               opacity: .8
                           });
 
+                          shape.on("mousedown",function(e){
+                          a = [
+	"Cai",
+	"Baticristo",
+	"Olimpo"
+];
+for (i = 0, total = a.length; i &lt; total; i++)
+	areas[a[i]].setFill('yellow');
+    areas[a[i]].setAlpha(0.5);
+    shapesLayer.draw();;
+
+                          
+                          });
+
                           //menu header
                           $("[id$='contextMenuH']").html('');
                           //flag
@@ -209,16 +236,15 @@ padding:1px
 
 
 
-          function ocultarArea(cual) {
-              document.images[cual].style.visibility = "hidden";
-              document.anchors[cual].style.backgroundColor = "transparent";
-          }
-          function mostrarArea(cual) {
-              document.images[cual].style.visibility = "visible";
-              document.anchors[cual].style.backgroundColor = "yellow";
-          }
-
+          function miFuncion() {
+          alert("funcion activada")
+           };
       </script>
+
+
+
+      <h1>HOLAGOALGAF</h1>
+
     <div id="container"></div>
 
     <div id="contextMenu" style="display:none">
@@ -227,3 +253,8 @@ padding:1px
     </div></div>
     
    <br /><br />
+
+   <form action=""><input type="button" onclick="miFuncion()" value="Activar"/>
+   </form>
+
+   <h1>HOLAGOALGAF</h1>
