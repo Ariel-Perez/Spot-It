@@ -37,7 +37,8 @@ namespace Demo_v2.Controllers
                                     bool dia_3mod_1, bool dia_3mod_2, bool dia_3mod_3, bool dia_3mod_4, bool dia_3mod_5, bool dia_3mod_6, bool dia_3mod_7, bool dia_3mod_8,
                                     bool dia_4mod_1, bool dia_4mod_2, bool dia_4mod_3, bool dia_4mod_4, bool dia_4mod_5, bool dia_4mod_6, bool dia_4mod_7, bool dia_4mod_8,
                                     bool dia_5mod_1, bool dia_5mod_2, bool dia_5mod_3, bool dia_5mod_4, bool dia_5mod_5, bool dia_5mod_6, bool dia_5mod_7, bool dia_5mod_8,
-                                    bool dia_6mod_1, bool dia_6mod_2, bool dia_6mod_3, bool dia_6mod_4, bool dia_6mod_5, bool dia_6mod_6, bool dia_6mod_7, bool dia_6mod_8)
+                                    bool dia_6mod_1, bool dia_6mod_2, bool dia_6mod_3, bool dia_6mod_4, bool dia_6mod_5, bool dia_6mod_6, bool dia_6mod_7, bool dia_6mod_8,
+                                    int capacity)
         {
             bool[][] array = new bool[6][];
             array[0] = new bool[8]{ dia_1mod_1,  dia_1mod_2,  dia_1mod_3,  dia_1mod_4,  dia_1mod_5,  dia_1mod_6,  dia_1mod_7,  dia_1mod_8};

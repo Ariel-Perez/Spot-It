@@ -1,5 +1,17 @@
 ﻿@{
     ViewBag.Title = "Index";
+    
+    string[] horarios = new string[]
+    {
+        "08.30-09.50",
+        "10.00-11.20",
+        "11.30-12.50",
+        "14.00-15.20",
+        "15.30-16.50",
+        "17.00-18.20",
+        "18.30-19.50",
+        "20.00-21.20"  
+    };
 }
 
 <h1>Buscador de Salas Vacías</h1>
@@ -8,7 +20,7 @@
     <div style="width:40%;float:left;text-align:center; vertical-align:middle">
 	    <h2>Seleccione los horarios en que necesita la sala</h2>
         <br />
-	    <table style="width:80%">
+	    <table style="width:85%">
 		    <tr>
                 <th>Módulo</th>
 			    <th>Horario</th>
@@ -19,19 +31,6 @@
 			    <th>V</th>
 			    <th>S</th>
 		    </tr>
-            @{
-                string[] horarios = new string[]
-                {
-                    "08.30-09.50",
-                    "10.00-11.20",
-                    "11.30-12.50",
-                    "14.00-15.20",
-                    "15.30-16.50",
-                    "17.00-18.20",
-                    "18.30-19.50",
-                    "20.00-21.20"  
-                };
-            }
             @for (int i = 1; i <= 8; i++)
             {
                 <tr>
@@ -61,7 +60,7 @@
 	    <h2>Seleccione preferencias para la sala</h2>
         <br />
 	    <h3 style="display:inline">Capacidad:</h3>
-        @Html.TextBox("capacity", "0");
+        @Html.TextBox("capacity", "0")
         <input type="button" name="inc" value="^" onclick="increaseCapacity()" />
         <input type="button" name="dec" value="v" onclick="decreaseCapacity()" />
         <br />
