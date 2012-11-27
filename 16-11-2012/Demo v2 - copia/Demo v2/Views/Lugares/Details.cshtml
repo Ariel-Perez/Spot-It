@@ -35,7 +35,7 @@
 <ul>
     @foreach (var categoria in Model.Categoria)
     {
-        <li>@categoria.Nombre</li>
+        <li>@Html.ActionLink(categoria.Nombre, "Search", "Lugares", new { idCategoria = categoria.Id }, null)</li>
     }
 </ul>
 

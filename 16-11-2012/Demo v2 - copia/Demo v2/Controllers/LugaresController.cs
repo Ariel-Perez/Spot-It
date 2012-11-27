@@ -21,11 +21,11 @@ namespace Demo_v2.Controllers
         }
 
         //
-        // GET: /Lugares/Search?categoriaId=1
+        // GET: /Lugares/Search?idCategoria=1
 
-        public ActionResult Search(int categoriaId)
+        public ActionResult Search(int idCategoria)
         {
-            var cat = db.Categoria.Single(a => a.Id == categoriaId);
+            var cat = db.Categoria.Single(a => a.Id == idCategoria);
             return View(cat);
         }
 

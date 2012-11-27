@@ -47,7 +47,7 @@
                     {   
                         <tr>
                             <td></td>
-                            <td>12.50-14.00</td>
+                            <td></td>
                             <td colspan="6"><pre><b>A   L   M   U   E   R   Z   O</b></pre></td>
                         </tr>
                     }
@@ -72,18 +72,6 @@
 </form>
 
 <script type="text/javascript">
-    function gatherInfo() {
-        var info = "capac:" + document.getElementById("capacity").value;
-        for (var i = 1; i <= 8; i++) {
-            for (var j = 1; j <= 6; j++) {
-                if (document.getElementById("dia_" + j + "mod_" + i).checked) {
-                    info = info + "(" + j + "," + i + ")";
-                }
-            }
-        }
-        document.write(info);
-    }
-
     function increaseCapacity() {
         document.getElementById("capacity").value++;
     }
