@@ -5,10 +5,9 @@
 }
 
 <h2>Salas Disponibles:</h2>
-
 <ul>
     @foreach (var s in Model)
     {
-        <li>@s.Nombre</li>
+        <li>@Html.ActionLink(s.Nombre, "Book", new { idSala = s.Id })</li>
     }
 </ul>

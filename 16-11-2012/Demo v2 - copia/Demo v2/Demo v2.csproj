@@ -354,6 +354,7 @@
     <Content Include="Views\Maps\place.cshtml" />
     <Content Include="Views\Salas\Index.cshtml" />
     <Content Include="Views\Salas\Search.cshtml" />
+    <Content Include="Views\Salas\Book.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

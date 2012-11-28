@@ -67,5 +67,13 @@ namespace Demo_v2.Controllers
             
             return View(salas);
         }
+
+        //
+        // GET: /Salas/Book?idSala=3
+        public ActionResult Book(int idSala)
+        {
+            var sala = db.Sala.Single(s => s.LugarId != null && s.LugarId == idSala);
+            return View(sala);
+        }
     }
 }

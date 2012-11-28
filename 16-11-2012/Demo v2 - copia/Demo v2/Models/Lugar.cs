@@ -13,6 +13,7 @@ namespace Demo_v2.Models
         public virtual string Nombre { get; set; }
         public virtual string Descripcion { get; set; }
         public virtual int? FacultadId { get; set; }
+        public virtual int? LugarId { get; set; }
 
         public virtual Facultad Facultad { get; set; }
         public virtual List<Categoria> Categoria { get; set; }
