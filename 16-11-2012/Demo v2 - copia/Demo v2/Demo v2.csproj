@@ -216,6 +216,10 @@
     <Content Include="Content\Propuesta\images\Tumblr.png" />
     <Content Include="Content\Propuesta\images\Twitter.png" />
     <Content Include="Content\Propuesta\images\uc.png" />
+    <Content Include="Images\mapa.jpg" />
+    <Content Include="Images\Pisos\salasA.png" />
+    <Content Include="Images\Pisos\SalasB_p1.png" />
+    <Content Include="Images\Pisos\SalasB_p2.png" />
     <Content Include="Images\ru.png" />
     <Content Include="Scripts\InteractiveMapData.js" />
     <Content Include="Scripts\jquery.min.js" />
