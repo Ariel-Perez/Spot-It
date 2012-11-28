@@ -1,7 +1,18 @@
-﻿@model IEnumerable<Demo_v2.Models.Categoria>
+﻿@model Demo_v2.Models.Categoria
+
 @{
-    ViewBag.Title = "Map";
-    /*Aquí se enuentra el mapa, su lógica, por ahora solo muestra el edificio San Agustín. Pero funciona*/
+    ViewBag.Title = "Search";    
+}
+
+<script type="text/javascript">
+    var cosas = new Array();
+</script>
+@for (int i = 0; i < Model.Lugar.Count; i++)
+{
+    string nombre = Model.Lugar[i].Nombre;
+    <script type="text/javascript">
+        cosas[@i] = "@nombre";
+    </script>
 }
 
 <h2>Map</h2>
@@ -275,22 +286,13 @@ padding:1px
 
           
               function hola(){
-            var zona = document.f1.pais[document.f1.pais.selectedIndex].value 
-            submit();
+            var zona = document.f1.pais[document.f1.pais.selectedIndex].value;
+           
             }
 
           var nuevaCosa ='<%=algo%>';
 
       </script>
-   <form action="Lugares/Search" name="f1">
-		<select name="idCategoria" size="1" onchange="submit();">
-			<option value=0></option>
-				    @foreach(var cat in Model)
-                    {
-                        <option value=@cat.Id selected><li>@Html.ActionLink(cat.Nombre, "Search", new { idCategoria = cat.Id })</li></option>
-                    }
-		</select>
-	</form>
 
     <h1>Esta es la parte de arriba!!</h1>
     <div id="container"></div>
@@ -301,8 +303,16 @@ padding:1px
     </div></div>
     
     <h1>Esta es la parte de abajo! HOLA</h1>
-   
+   <div>
+    <ol>
+    @foreach (var lugar in @Model.Lugar)
+    {
+        <li>@Html.ActionLink(lugar.Nombre, "Details", new {idLugar = lugar.Id})</li>
+    }
+    </ol>
+</div>
        <input type="button" class="button_1" id="activate" value="Activate" />
 
     <h2>HOLO</h2>
    <br /><br />
+   @Html.ActionLink("Volver", "Index")
