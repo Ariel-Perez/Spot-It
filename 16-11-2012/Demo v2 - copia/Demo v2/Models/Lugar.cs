@@ -23,5 +23,7 @@ namespace Demo_v2.Models
         public virtual Facultad Facultad { get; set; }
         public virtual List<Categoria> Categoria { get; set; }
         public virtual List<Comentario> Comentario { get; set; }
+
+        public virtual List<Horario> Horario { get; set; }
     }
 }

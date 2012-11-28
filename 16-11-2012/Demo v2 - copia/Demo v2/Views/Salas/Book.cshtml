@@ -1,19 +1,110 @@
-﻿@model Demo_v2.Models.Lugar
+﻿@model Demo_v2.Models.SolicitudReserva
 
 @{
     ViewBag.Title = "Book";
+
+    string[] horarios = new string[]
+    {
+        "08.30-09.50",
+        "10.00-11.20",
+        "11.30-12.50",
+        "14.00-15.20",
+        "15.30-16.50",
+        "17.00-18.20",
+        "18.30-19.50",
+        "20.00-21.20"  
+    };
 }
+
+
 
 <h2>Confirmación Reserva de Sala</h2>
 
-<table width="250">
-    <tr>
-        <td>Nombre</td>
-        <td>@Model.Nombre</td>
-    </tr>
-    <tr>
-        <td>Capacidad</td>
-        <td>@Model.capacidad</td>
-    </tr>
-</table>
-<button name="Book">Reservar</button>
+
+
+
+<form action="/Salas/Search" method="get">
+    <div style="width:50%;float:left;">
+        <table width="250">
+            <tr>
+                <td>Nombre</td>
+                <td>@Model.Sala.Nombre</td>
+            </tr>
+            <tr>
+                <td>Capacidad</td>
+                <td>@Model.Sala.capacidad</td>
+            </tr>
+        </table>
+        <br />
+        <button name="Book">Reservar</button>
+    </div>
+    <div style="width:30%;float:left;text-align:center;vertical-align:middle">
+	    <h2>Puede modificar el horario de reserva</h2>
+        <table style="width:75%">
+		    <tr>
+                <th>Módulo</th>
+			    <th>Horario</th>
+			    <th>L</th>
+			    <th>M</th>
+			    <th>W</th>
+			    <th>J</th>
+			    <th>V</th>
+			    <th>S</th>
+		    </tr>
+            @for (int i = 1; i <= 8; i++)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@horarios[i - 1]</td>
+                
+                    @for (int j = 1; j <= 6; j++)
+                    {
+                        string checkBoxName = "dia_" + j + "mod_" + i;
+                        <td>@Html.CheckBox(checkBoxName)</td>
+                    }
+                    
+                    @if (i == 3)
+                    {   
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td colspan="6"><b>A L M U E R Z O</b></td>
+                        </tr>
+                    }
+                </tr>
+            }
+	    </table>
+    </div>
+</form>
+
+@for (int i = 0; i < Model.HorarioPedido.Length; i++)
+{
+    for (int j = 0; j < Model.HorarioPedido[i].Length; j++)
+    {
+        if (Model.HorarioPedido[i][j])
+        {
+            string checkBoxName = "dia_"+i+"mod_"+j;
+            <script>document.getElementsByName(@checkBoxName).item(0).checked = true;</script>
+        }
+    }
+}
+
+@foreach (Demo_v2.Models.Horario h in Model.Sala.Horario)
+{
+    if (h.tipo_actividad != " - ")
+    {
+        int dia = 0;
+        switch(h.Dia){
+        case "Lunes": dia = 1;break;
+        case "Martes": dia = 2;break;
+        case "Miercoles":dia=3;break;
+        case "Jueves":dia=4;break;
+        case "Viernes":dia=5;break;
+        case "Sabado":dia=6;break;
+        }
+        string checkBoxName = "dia_"+ dia + "mod_"+h.Modulo;
+        
+        <script>document.getElementsByName("@checkBoxName").item(0).disabled = true;</script>
+    }
+    
+}

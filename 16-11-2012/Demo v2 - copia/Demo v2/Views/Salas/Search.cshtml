@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Demo_v2.Models.Lugar>
+﻿@model Demo_v2.Models.ResultadosBusquedaSala
 
 @{
     ViewBag.Title = "Search";
@@ -10,7 +10,7 @@
 
 @{
     List<Demo_v2.Models.Lugar> lugaresAgregados = new List<Demo_v2.Models.Lugar>();
-    foreach(var l in Model)
+    foreach(var l in Model.Salas)
     {
         if (l.LugarContenedor != null && !lugaresAgregados.Contains(l.LugarContenedor))
         {
@@ -31,8 +31,58 @@
     </div>
 <div>
 <ul>
-    @foreach (var s in Model)
+    @foreach (var s in Model.Salas)
     {
-        <li>@Html.ActionLink(s.Nombre, "Book", new { idSala = s.Id })</li>
+        <li>@Html.ActionLink(s.Nombre, "Book", 
+        new {
+            dia_1mod_1 = Model.HorariosPedidos[0][0],
+            dia_1mod_2 = Model.HorariosPedidos[0][1],
+            dia_1mod_3 = Model.HorariosPedidos[0][2],
+            dia_1mod_4 = Model.HorariosPedidos[0][3],
+            dia_1mod_5 = Model.HorariosPedidos[0][4],
+            dia_1mod_6 = Model.HorariosPedidos[0][5],
+            dia_1mod_7 = Model.HorariosPedidos[0][6],
+            dia_1mod_8 = Model.HorariosPedidos[0][7],
+            dia_2mod_1 = Model.HorariosPedidos[1][0],
+            dia_2mod_2 = Model.HorariosPedidos[1][1],
+            dia_2mod_3 = Model.HorariosPedidos[1][2],
+            dia_2mod_4 = Model.HorariosPedidos[1][3],
+            dia_2mod_5 = Model.HorariosPedidos[1][4],
+            dia_2mod_6 = Model.HorariosPedidos[1][5],
+            dia_2mod_7 = Model.HorariosPedidos[1][6],
+            dia_2mod_8 = Model.HorariosPedidos[1][7],
+            dia_3mod_1 = Model.HorariosPedidos[2][0],
+            dia_3mod_2 = Model.HorariosPedidos[2][1],
+            dia_3mod_3 = Model.HorariosPedidos[2][2],
+            dia_3mod_4 = Model.HorariosPedidos[2][3],
+            dia_3mod_5 = Model.HorariosPedidos[2][4],
+            dia_3mod_6 = Model.HorariosPedidos[2][5],
+            dia_3mod_7 = Model.HorariosPedidos[2][6],
+            dia_3mod_8 = Model.HorariosPedidos[2][7],
+            dia_4mod_1 = Model.HorariosPedidos[3][0],
+            dia_4mod_2 = Model.HorariosPedidos[3][1],
+            dia_4mod_3 = Model.HorariosPedidos[3][2],
+            dia_4mod_4 = Model.HorariosPedidos[3][3],
+            dia_4mod_5 = Model.HorariosPedidos[3][4],
+            dia_4mod_6 = Model.HorariosPedidos[3][5],
+            dia_4mod_7 = Model.HorariosPedidos[3][6],
+            dia_4mod_8 = Model.HorariosPedidos[3][7],
+            dia_5mod_1 = Model.HorariosPedidos[4][0],
+            dia_5mod_2 = Model.HorariosPedidos[4][1],
+            dia_5mod_3 = Model.HorariosPedidos[4][2],
+            dia_5mod_4 = Model.HorariosPedidos[4][3],
+            dia_5mod_5 = Model.HorariosPedidos[4][4],
+            dia_5mod_6 = Model.HorariosPedidos[4][5],
+            dia_5mod_7 = Model.HorariosPedidos[4][6],
+            dia_5mod_8 = Model.HorariosPedidos[4][7],
+            dia_6mod_1 = Model.HorariosPedidos[5][0],
+            dia_6mod_2 = Model.HorariosPedidos[5][1],
+            dia_6mod_3 = Model.HorariosPedidos[5][2],
+            dia_6mod_4 = Model.HorariosPedidos[5][3],
+            dia_6mod_5 = Model.HorariosPedidos[5][4],
+            dia_6mod_6 = Model.HorariosPedidos[5][5],
+            dia_6mod_7 = Model.HorariosPedidos[5][6],
+            dia_6mod_8 = Model.HorariosPedidos[5][7],
+            idSala = s.Id })</li>
     }
 </ul>
