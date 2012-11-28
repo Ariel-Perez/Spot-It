@@ -38,6 +38,7 @@ namespace Demo_v2.Models
             modelBuilder.Entity<Sala>().HasKey(obj => new { obj.LugarId });
             modelBuilder.Entity<Horario>().HasKey(obj => new { obj.LugarId, obj.Modulo, obj.Dia });
 
+            //modelBuilder.Entity<Sala>().HasRequired<Lugar>(s => s.Lugar).WithOptional();
             modelBuilder.Entity<Lugar>().HasOptional<Lugar>(l => l.LugarContenedor).WithMany().HasForeignKey(l => l.LugarId);
         }
     }

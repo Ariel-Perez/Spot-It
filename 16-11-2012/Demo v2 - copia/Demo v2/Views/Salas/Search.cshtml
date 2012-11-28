@@ -4,7 +4,32 @@
     ViewBag.Title = "Search";
 }
 
+<script type="text/javascript">
+    var cosas = new Array();
+</script>
+
+@{
+    List<Demo_v2.Models.Lugar> lugaresAgregados = new List<Demo_v2.Models.Lugar>();
+    foreach(var l in Model)
+    {
+        if (l.LugarContenedor != null && !lugaresAgregados.Contains(l.LugarContenedor))
+        {
+            lugaresAgregados.Add(l.LugarContenedor);
+            <script type="text/javascript">
+                cosas[@lugaresAgregados.Count - 1] = "@l.LugarContenedor.Nombre";
+            </script>
+        }
+    }
+}
+
 <h2>Salas Disponibles:</h2>
+
+<div id="container"></div>
+ <div id="contextMenu" style="display:none">
+        <div id="contextMenuH"></div>
+        <div id="contextMenuB"></div>
+    </div>
+<div>
 <ul>
     @foreach (var s in Model)
     {
