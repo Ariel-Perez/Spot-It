@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Demo_v2.Models.Categoria>
+@{
     ViewBag.Title = "Map";
     /*Aquí se enuentra el mapa, su lógica, por ahora solo muestra el edificio San Agustín. Pero funciona*/
 }
@@ -144,6 +145,7 @@ padding:1px
                           this.setFill('red');
                           this.setAlpha(0.5);
                           shapesLayer.draw();
+
                       });
 
                       //mouseout the country
@@ -153,6 +155,7 @@ padding:1px
                           shapesLayer.draw();
                           tooltip.hide();
                           tooltipLayer.draw();
+
                       });
 
                       //mousemove around the country path
@@ -208,29 +211,13 @@ padding:1px
                   } ());
               }
 
-              var rect = new Kinetic.Rect({
-                  x: 300,
-                  y: 90,
-                  width: 100,
-                  height: 50,
-                  fill: 'green',
-                  strokeWidth: 3,
-                  offset: {
-                      x: 50,
-                      y: 25
-                  },
-                  draggable: false,
-                  id: 'myRect'
-              });
-
-              shapesLayer.add(rect);
 
               stage.add(shapesLayer);
               stage.add(tooltipLayer);
 
               document.getElementById('activate').addEventListener('click', function () {
-
-                  cosas = ["CAI", "Baticristo","Olimpo","Entrada Principal","San Agustín"];
+                  alert('<%=Greetings()%>');
+                  cosas = ["CAI", "Baticristo", "Olimpo", "Entrada Principal", "San Agustín"];
 
                   for (i = 0, total = cosas.length; i < total; i++) {
                       var n = cosas[i];
@@ -243,14 +230,14 @@ padding:1px
 
                       shape.transitionTo({
                           scale: {
-                              x:this.x * 2,
+                              x: this.x * 2,
                               y: this.y * 2
                           },
                           duration: 1,
                           easing: 'elastic-ease-out'
                       });
                       //*****************END FOR*************
-                  } 
+                  }
               }, false);
               //*******************TERMINA****************
 
@@ -260,6 +247,28 @@ padding:1px
 
           function myFuncion() {
 
+
+              cosas = ["CAI", "Baticristo", "Olimpo", "Entrada Principal", "San Agustín"];
+
+              for (i = 0, total = cosas.length; i < total; i++) {
+                  var n = cosas[i];
+                  var name = '#' + n;
+                  var shape = stage.get(name)[0];
+                  shape.setFill('yellow');
+                  shape.setAlpha(0.8);
+                  shapesLayer.draw();
+
+
+                  shape.transitionTo({
+                      scale: {
+                          x: this.x * 2,
+                          y: this.y * 2
+                      },
+                      duration: 1,
+                      easing: 'elastic-ease-out'
+                  });
+                  //*****************END FOR*************
+              } 
               alert("HOSDFOSFLS");
 
 
@@ -267,11 +276,20 @@ padding:1px
           }
 
 
-      
+          var nuevaCosa ='<%=algo%>';
 
       </script>
+   
+      <DropDownList id="DropDownList1" runat="server">
 
-    
+
+   
+     {
+         <ListItem Value="FF">cat</ListItem>
+     }
+
+     </DropDownList>
+
     <h1>Esta es la parte de arriba!!</h1>
     <div id="container"></div>
 
