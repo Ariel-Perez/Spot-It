@@ -48,7 +48,7 @@ namespace Demo_v2.Controllers
             array[4] = new bool[8]{ dia_5mod_1,  dia_5mod_2,  dia_5mod_3,  dia_5mod_4,  dia_5mod_5,  dia_5mod_6,  dia_5mod_7,  dia_5mod_8};
             array[5] = new bool[8]{ dia_6mod_1,  dia_6mod_2,  dia_6mod_3,  dia_6mod_4,  dia_6mod_5,  dia_6mod_6,  dia_6mod_7,  dia_6mod_8};
             
-            var salas = db.Lugar.Where(l => l.Descripcion == "Es una sala.").ToList();
+            var salas = db.Lugar.Where(l => l.isSala).ToList();
 
             string dia;
             for(int i = 0; i < 6; i++)
@@ -72,8 +72,11 @@ namespace Demo_v2.Controllers
         // GET: /Salas/Book?idSala=3
         public ActionResult Book(int idSala)
         {
-            var sala = db.Sala.Single(s => s.LugarId == idSala);
-            return View(sala);
+            var sala = db.Lugar.Single(s => s.Id == idSala);
+            if (sala != null)
+                return View(sala);
+            else
+                return View(default(Lugar));
         }
     }
 }

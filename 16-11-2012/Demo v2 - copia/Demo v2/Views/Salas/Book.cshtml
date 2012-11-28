@@ -1,4 +1,4 @@
-﻿@model Demo_v2.Models.Sala
+﻿@model Demo_v2.Models.Lugar
 
 @{
     ViewBag.Title = "Book";
@@ -6,4 +6,14 @@
 
 <h2>Confirmación Reserva de Sala</h2>
 
-<p>Usted va a reservar la sala @Model.Lugar.Nombre</p>
+<table width="250">
+    <tr>
+        <td>Nombre</td>
+        <td>@Model.Nombre</td>
+    </tr>
+    <tr>
+        <td>Capacidad</td>
+        <td>@Model.capacidad</td>
+    </tr>
+</table>
+<button name="Book">Reservar</button>

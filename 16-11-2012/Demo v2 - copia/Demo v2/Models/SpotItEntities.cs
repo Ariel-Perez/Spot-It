@@ -11,7 +11,7 @@ namespace Demo_v2.Models
     {
         public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Lugar> Lugar { get; set; }
-        public DbSet<Sala> Sala { get; set; }
+        //public DbSet<Sala> Sala { get; set; }
         public DbSet<Facultad> Facultad { get; set; }
         public DbSet<Departamento> Departamento { get; set; }
         public DbSet<Autoridad> Autoridad { get; set; }
@@ -35,7 +35,7 @@ namespace Demo_v2.Models
             modelBuilder.Entity<Comentario>().HasKey(obj => new { obj.LugarId, obj.Numero });
             modelBuilder.Entity<Departamento>().HasKey(obj => new { obj.DepartamentoId, obj.FacultadId });
             modelBuilder.Entity<TrabajaEn>().HasKey(obj => new { obj.FacultadId, obj.AutoridadId, obj.DepartamentoId });
-            modelBuilder.Entity<Sala>().HasKey(obj => new { obj.LugarId });
+            //modelBuilder.Entity<Sala>().HasKey(obj => new { obj.LugarId });
             modelBuilder.Entity<Horario>().HasKey(obj => new { obj.LugarId, obj.Modulo, obj.Dia });
 
             //modelBuilder.Entity<Sala>().HasRequired<Lugar>(s => s.Lugar).WithOptional();

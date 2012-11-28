@@ -15,6 +15,7 @@ namespace Demo_v2.Models
         public virtual string tipo_actividad { get; set; }
         public virtual DateTime fecha_ingreso { get; set; }
 
-        public virtual Sala Sala { get; set; }
+        public virtual Lugar Lugar { get; set; }
+        //public virtual Sala Sala { get; set; }
     }
 }
