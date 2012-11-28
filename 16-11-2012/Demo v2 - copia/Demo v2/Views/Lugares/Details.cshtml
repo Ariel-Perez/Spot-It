@@ -17,10 +17,11 @@
   display:none;
 }
    
-#boxes .window {
-  position:fixed;
-  width:440px;
-  height:200px;
+#boxes .window 
+{
+  position:absolute;
+  width:840px;
+  height:700px;
   display:none;
   z-index:9999;
   padding:20px;
@@ -28,9 +29,11 @@
  
  
 /* Customize your modal window here, you can add background image too */
-#boxes #dialog {
-  width:375px; 
-  height:203px;
+#boxes #dialog 
+{
+  padding-top: 200px;
+  width:840px; 
+  height:700px;
 }
 </style>
 
@@ -85,7 +88,7 @@
        });
 
 </script>
-<a href="#dialog" name="modal">Simple Modal Window</a>
+<a href="#dialog" name="modal">Plano Salas A</a>
 <br />
 <a href="#d" name="modal">cosa 2</a>
  
@@ -94,11 +97,12 @@
      
     <!-- #customize your modal window here -->
  
-    <div id="dialog" class="window">
-        <b>Testing of Modal Window</b> |<img src="../../Content/Propuesta/images/logo.png" /> 
-         <p>PRUEBA PRUEBA</p>
+    <div id="dialog" class="window" >
+   <center><h1>Salas A</h1>
+       <img  float="left" src="../../Images/Pisos/salasA.png" />
+        <p>Piso 1</p>
         <!-- close button is defined as close class -->
-        <a href="#" class="close">Close it</a>
+        <a href="#" class="close">Close it</a></center>
  
     </div>
  
