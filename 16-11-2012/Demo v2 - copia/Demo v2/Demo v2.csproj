@@ -196,9 +196,10 @@
     <Compile Include="Models\Horario.cs" />
     <Compile Include="Models\InMemoryUserStore.cs" />
     <Compile Include="Models\Lugar.cs" />
+    <Compile Include="Models\Packages\DynamicLinkInfo.cs" />
     <Compile Include="Models\Punto.cs" />
-    <Compile Include="Models\ResultadosBusquedaSala.cs" />
-    <Compile Include="Models\SolicitudReserva.cs" />
+    <Compile Include="Models\Packages\ResultadosBusquedaSala.cs" />
+    <Compile Include="Models\Packages\SolicitudReserva.cs" />
     <Compile Include="Models\SpotItEntities.cs" />
     <Compile Include="Models\TrabajaEn.cs">
       <SubType>Code</SubType>

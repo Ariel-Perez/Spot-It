@@ -1,14 +1,15 @@
-﻿@model Demo_v2.Models.Lugar
+﻿@model Demo_v2.Models.Packages.DynamicLinkInfo
 
 @{
     ViewBag.Title = "Show";
 }
 
-<h2>Mostrando: @Model.Nombre</h2>
+<h2>@Model.Lugar.Nombre</h2>
+<h2>@Model.Mensaje</h2>
 
 <script type="text/javascript">
     var cosas = new Array();
-    cosas[0] = "@Model.Nombre";
+    cosas[0] = "@Model.Lugar.Nombre";
 </script>
 
 <div id="container"></div>
