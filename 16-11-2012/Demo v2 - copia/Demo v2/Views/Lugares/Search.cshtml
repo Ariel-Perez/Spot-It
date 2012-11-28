@@ -5,13 +5,20 @@
 }
 
 <h2>Buscando resultados para @Model.Nombre</h2>
-<ol>
-    @foreach (var lugar in @Model.Lugar)
-    {
-        <li>@Html.ActionLink(lugar.Nombre, "Details", new {idLugar = lugar.Id})</li>
-    }
-</ol>
-<br />
-<br />
+
+<br/>
+    <form action="Details">
+		<select name="idLugar" size="1" onchange="submit();">
+			<option value=0></option>
+                @foreach (var lugar in @Model.Lugar)
+                {
+                    <option value=@lugar.Id><li>@Html.ActionLink(lugar.Nombre, "Details", new {idLugar = lugar.Id})</li></option>
+                }
+		</select>
+	</form>
+
+
+<br/>
+<br/>
 <hr />
 @Html.ActionLink("Volver", "Index")
