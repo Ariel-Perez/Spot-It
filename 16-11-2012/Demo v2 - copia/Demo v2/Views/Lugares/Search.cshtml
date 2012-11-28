@@ -152,18 +152,41 @@ padding:1px
                       });
                       //mouseover the country
                       shape.on("mouseover", function () {
+
+
                           this.setFill('red');
                           this.setAlpha(0.5);
                           shapesLayer.draw();
+
+
                       });
 
                       //mouseout the country
                       shape.on("mouseout", function () {
-                          this.setFill('#fff');
-                          this.setAlpha(0.1);
-                          shapesLayer.draw();
-                          tooltip.hide();
-                          tooltipLayer.draw();
+                      var ss ="false";
+                          for (i = 0, total = cosas.length; i < total; i++) {
+                              var n = cosas[i];
+                              var name = '#' + n;
+                              var shape = stage.get(name)[0]
+                              if (this == shape) {
+                                  this.setFill('yellow');
+                                  this.setAlpha(0.8);
+                                  shapesLayer.draw();
+                                  tooltip.hide();
+                                  tooltipLayer.draw();
+                                  ss = "true";
+                              }
+
+                          }
+
+                          if(ss=="false") {
+                                  this.setFill('#fff');
+                                  this.setAlpha(0.1);
+                                  shapesLayer.draw();
+                                  tooltip.hide();
+                                  tooltipLayer.draw();
+                              }
+
                       });
 
                       //mousemove around the country path
@@ -219,22 +242,7 @@ padding:1px
                   } ());
               }
 
-              var rect = new Kinetic.Rect({
-                  x: 300,
-                  y: 90,
-                  width: 100,
-                  height: 50,
-                  fill: 'green',
-                  strokeWidth: 3,
-                  offset: {
-                      x: 50,
-                      y: 25
-                  },
-                  draggable: false,
-                  id: 'myRect'
-              });
 
-              shapesLayer.add(rect);
 
               stage.add(shapesLayer);
               stage.add(tooltipLayer);
