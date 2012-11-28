@@ -37,5 +37,11 @@ namespace Demo_v2.Controllers
             var lugar = db.Lugar.Single(a => a.Id == idLugar);
             return View(lugar);
         }
+
+
+        public ActionResult Test()
+        {
+            return View();
+        }
     }
 }
