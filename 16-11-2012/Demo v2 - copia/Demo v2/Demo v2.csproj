@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.1.4\lib\net40-client\Facebook.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -186,10 +189,12 @@
     <Compile Include="Models\Departamento.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\FacebookUser.cs" />
     <Compile Include="Models\Facultad.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Horario.cs" />
+    <Compile Include="Models\InMemoryUserStore.cs" />
     <Compile Include="Models\Lugar.cs" />
     <Compile Include="Models\Punto.cs" />
     <Compile Include="Models\ResultadosBusquedaSala.cs" />
