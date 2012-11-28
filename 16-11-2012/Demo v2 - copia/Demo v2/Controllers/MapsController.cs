@@ -28,10 +28,7 @@ namespace Demo_v2.Controllers
         }
 
         public string algo { get { return "cosa"; } }
-        public string Greetings()
-        {
-            return ("Hello World!");
-        }
+      
 
     }
 }

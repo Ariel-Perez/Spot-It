@@ -12,7 +12,7 @@
 			<option value=0></option>
 				    @foreach(var cat in Model)
                     {
-                        <option value=@cat.Id><li>@Html.ActionLink(cat.Nombre, "Search", new { idCategoria = cat.Id })</li></option>
+                        <option value=@cat.Id selected><li>@Html.ActionLink(cat.Nombre, "Search", new { idCategoria = cat.Id })</li></option>
                     }
 		</select>
 	</form>

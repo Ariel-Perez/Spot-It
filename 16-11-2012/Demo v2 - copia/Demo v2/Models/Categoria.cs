@@ -13,5 +13,10 @@ namespace Demo_v2.Models
         public virtual string Nombre { get; set; }
 
         public virtual List<Lugar> Lugar { get; set; }
+
+        protected string Greetings()
+        {
+            return ("Hello World!");
+        }
     }
 }

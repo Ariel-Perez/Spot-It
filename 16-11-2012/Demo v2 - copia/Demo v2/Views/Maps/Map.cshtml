@@ -216,7 +216,7 @@ padding:1px
               stage.add(tooltipLayer);
 
               document.getElementById('activate').addEventListener('click', function () {
-                  alert('<%=Greetings()%>');
+                  alert(<%=Greetings()%>);
                   cosas = ["CAI", "Baticristo", "Olimpo", "Entrada Principal", "San Agustín"];
 
                   for (i = 0, total = cosas.length; i < total; i++) {
@@ -271,24 +271,26 @@ padding:1px
               } 
               alert("HOSDFOSFLS");
 
-
-            
           }
 
+          
+              function hola(){
+            var zona = document.f1.pais[document.f1.pais.selectedIndex].value 
+            submit();
+            }
 
           var nuevaCosa ='<%=algo%>';
 
       </script>
-   
-      <DropDownList id="DropDownList1" runat="server">
-
-
-   
-     {
-         <ListItem Value="FF">cat</ListItem>
-     }
-
-     </DropDownList>
+   <form action="Lugares/Search" name="f1">
+		<select name="idCategoria" size="1" onchange="submit();">
+			<option value=0></option>
+				    @foreach(var cat in Model)
+                    {
+                        <option value=@cat.Id selected><li>@Html.ActionLink(cat.Nombre, "Search", new { idCategoria = cat.Id })</li></option>
+                    }
+		</select>
+	</form>
 
     <h1>Esta es la parte de arriba!!</h1>
     <div id="container"></div>
