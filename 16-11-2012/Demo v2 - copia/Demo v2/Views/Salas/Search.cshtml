@@ -24,13 +24,8 @@
 
 <h2>Salas Disponibles:</h2>
 
-<div id="container"></div>
- <div id="contextMenu" style="display:none">
-        <div id="contextMenuH"></div>
-        <div id="contextMenuB"></div>
-    </div>
-<div>
-<ul>
+<div class ="mylist">
+    <ul>
     @foreach (var s in Model.Salas)
     {
         <li>@Html.ActionLink(s.Nombre, "Book", 
@@ -83,6 +78,15 @@
             dia_6mod_6 = Model.HorariosPedidos[5][5],
             dia_6mod_7 = Model.HorariosPedidos[5][6],
             dia_6mod_8 = Model.HorariosPedidos[5][7],
-            idSala = s.Id })</li>
+            idSala = s.Id })
+        </li>
     }
-</ul>
+    </ul>
+</div>
+<div id="container"></div>
+ <div id="contextMenu" style="display:none">
+        <div id="contextMenuH"></div>
+        <div id="contextMenuB"></div>
+    </div>
+<div>
+

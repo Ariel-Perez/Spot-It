@@ -50,6 +50,7 @@ namespace Demo_v2.Controllers
             
             var salas = db.Lugar.Where(l => l.isSala).ToList();
 
+            salas.RemoveAll(s => s.capacidad < capacity);
             string dia;
             for(int i = 0; i < 6; i++)
             {
@@ -61,7 +62,7 @@ namespace Demo_v2.Controllers
                     dia = dias[i + 1];
                     var horarios = db.Horario.Where(h=> h.Modulo == (j+1) && h.Dia == dia && h.tipo_actividad != " - ").ToList();
                     
-                    salas.RemoveAll(l => horarios.Exists(h => h.LugarId == l.Id));
+                    salas.RemoveAll(s => horarios.Exists(h => h.LugarId == s.Id));
                 }
             }
 

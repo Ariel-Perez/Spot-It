@@ -8,11 +8,11 @@
 <h2>Buscar por Categoría</h2>
 <br/>
     <form action="Lugares/Search">
-		<select name="idCategoria" size="1" onchange="submit();">
-			<option value=0></option>
+		<select name="idCategoria" size="1" onchange="if(value != 0) submit();">
+			<option  selected="selected" value=0>Seleccione una Categoría</option>
 				    @foreach(var cat in Model)
                     {
-                        <option value=@cat.Id selected><li>@Html.ActionLink(cat.Nombre, "Search", new { idCategoria = cat.Id })</li></option>
+                        <option value=@cat.Id><li>@Html.ActionLink(cat.Nombre, "Search", new { idCategoria = cat.Id })</li></option>
                     }
 		</select>
 	</form>
