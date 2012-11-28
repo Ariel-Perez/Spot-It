@@ -131,7 +131,8 @@
     <p>Es parte de @Model.LugarContenedor.Nombre</p>
     <br />
 }
-@if (Model.Comentario.Count > 0)
+<!--
+if (Model.Comentario != null && Comentario.Count > 0)
 {
     <h3>Comentarios</h3>
     <table>
@@ -139,19 +140,19 @@
             <td>N°</td>
             <td>Comentario</td>
         </tr>
-        @foreach (var coment in Model.Comentario)
+        foreach (var coment in Model.Comentario)
         {
             <tr>
-                <td>@coment.Numero</td>
-                <td>@coment.Texto</td>
+                <td>coment.Numero</td>
+                <td>coment.Texto</td>
             </tr>
         }
     </table>
 }
-@if (Model.Comentario.Count == 0)
+if (Model.Comentario.Count == 0)
 {
     <p>Sin comentarios.</p>
-}
+}-->
 
 <br />
 <h3>Categorías</h3>

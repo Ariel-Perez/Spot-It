@@ -1,0 +1,20 @@
+﻿@model Demo_v2.Models.Lugar
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Mostrando: @Model.Nombre</h2>
+
+<script type="text/javascript">
+    var cosas = new Array();
+    cosas[0] = "@Model.Nombre";
+</script>
+
+<div id="container"></div>
+ <div id="contextMenu" style="display:none">
+        <div id="contextMenuH"></div>
+        <div id="contextMenuB"></div>
+    </div>
+<div>
+

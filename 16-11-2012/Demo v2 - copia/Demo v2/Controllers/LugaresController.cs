@@ -38,6 +38,14 @@ namespace Demo_v2.Controllers
             return View(lugar);
         }
 
+        //
+        // GET: /Lugares/Show?idLugar=3
+
+        public ActionResult Show(int idLugar)
+        {
+            var lugar = db.Lugar.Single(a => a.Id == idLugar);
+            return View(lugar);
+        }
 
         public ActionResult Test()
         {
