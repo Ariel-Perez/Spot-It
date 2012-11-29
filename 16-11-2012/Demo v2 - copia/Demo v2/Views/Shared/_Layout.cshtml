@@ -198,7 +198,7 @@ padding:1px
                       var k = key;
                       var area = areas[key];
                       var points = area.points;
-
+                      var Lugarid=area.Lugarid;
                       var shape = new Kinetic.Polygon({
                           points: points,
                           fill: '#fff',
@@ -288,7 +288,7 @@ padding:1px
 
                           //Información
                           $('<a target="_blank"></a>')
-                            .attr('href', '../Lugares/lugar?id=3&idMapa=1')
+                            .attr('href', '../Lugares/Details?Lugarid='+Lugarid)
                             .html('Información').appendTo($("[id$='contextMenuB']"));
 
                       });
