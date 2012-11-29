@@ -30,7 +30,7 @@
 
 
 
-<form <!--action="/Salas/Search" method="get"-->>
+<form action="/Salas/ConfirmBooking" method="post">
     <div style="width:50%;float:left;">
         <table width="250">
             <tr>
@@ -43,7 +43,8 @@
             </tr>
         </table>
         <br />
-        <button name="Book" onclick="reservar()">Reservar</button>
+        <input type="hidden" name="idSala" value="@Model.Sala.Id" />
+        <button type="submit" runat="server" id="bookButton" class="button" value="Reservar">Confirmar Reserva</button>
     </div>
     <div style="width:30%;float:left;text-align:center;vertical-align:middle">
 	    <h2>Puede modificar el horario de reserva</h2>

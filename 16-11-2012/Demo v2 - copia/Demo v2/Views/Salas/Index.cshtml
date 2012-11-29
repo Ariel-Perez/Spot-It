@@ -1,4 +1,6 @@
-﻿@{
+﻿@model DateTime
+
+@{
     ViewBag.Title = "Index";
     
     string[] horarios = new string[]
@@ -15,6 +17,7 @@
 }
 
 <h1>Buscador de Salas Vacías</h1>
+<h2>Mostrando disponibilidad para semana del @Model.Day / @Model.Month</h2>
 
 <form action="/Salas/Search" method="get">
     <div style="width:30%;float:left;text-align:center; vertical-align:middle">

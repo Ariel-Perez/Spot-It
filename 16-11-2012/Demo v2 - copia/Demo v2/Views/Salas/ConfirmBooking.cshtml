@@ -1,0 +1,11 @@
+﻿@model Demo_v2.Models.Lugar
+
+@{
+    ViewBag.Title = "ConfirmBooking";
+}
+
+<h2>Confirmación de Reserva</h2>
+<p>La reserva de la sala @Model.Nombre fue hecha con éxito.</p>
+
+<hr />
+@Html.ActionLink("Volver", "Index")
