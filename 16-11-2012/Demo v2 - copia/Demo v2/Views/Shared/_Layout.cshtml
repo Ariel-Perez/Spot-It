@@ -142,10 +142,6 @@ padding:1px
 <script src="../../Scripts/InteractiveMapData.js" type="text/javascript"></script>
       <script>
 
-          //      budcadas;
-
-          //for (i = 0, total = buscadas.length; i &lt; total; i++)
-          //	mostrarArea(buscadas[i]);
 
           function drawTooltip(tooltip, x, y, text) {
               tooltip.setText(text);
@@ -208,6 +204,9 @@ padding:1px
                           alpha: 0.1,
                           id: key.toString()
                       });
+
+
+
                       //mouseover the country
                       shape.on("mouseover", function () {
 
@@ -294,30 +293,54 @@ padding:1px
 
                       });
 
+                      for (i = 0, total = cosas.length; i < total; i++) {
+                          var n = cosas[i];
+                          var name = '#' + n;
+                          if(key.toString() == n){
+                              shape.setFill('yellow');
+                          shape.setAlpha(0.8);
+                        }
 
 
-                      shapesLayer.add(shape);
-                  } ());
-              }
-
-
-
-              stage.add(shapesLayer);
-              stage.add(tooltipLayer);
-
-
-              for (i = 0, total = cosas.length; i < total; i++) {
-                  var n = cosas[i];
-                  var name = '#' + n;
-                  var shape = stage.get(name)[0];
-                  shape.setFill('yellow');
-                  shape.setAlpha(0.8);
-                  shapesLayer.draw();
-
-
-                
                   //*****************END FOR*************
               }
-          };    
+              
+
+                      shapesLayer.add(shape);
+                  } 
+             
+
+
+         
+              
+              
+              ());
+
+ }
+              stage.add(shapesLayer);
+              stage.add(tooltipLayer);
+             
+
+         
+             
+          
+          };
+
+
+       
 
       </script>
+
+    /**
+    for (i = 0, total = cosas.length; i < total; i++) {
+        var n = cosas[i];
+        var name = '#' + n;
+        var shape = stage.get(name)[0];
+        shape.setFill('yellow');
+        shape.setAlpha(0.8);
+        shapesLayer.draw();
+        alert("color");
+
+
+        //*****************END FOR*************
+    }*/
