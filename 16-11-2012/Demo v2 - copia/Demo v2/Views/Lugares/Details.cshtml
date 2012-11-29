@@ -90,15 +90,8 @@
 
 
 </script>
-<a href="#dialog" name="modal">Plano Salas A</a>
-<br />
- 
-<div id="boxes">
- 
-     
-    <!-- #customize your modal window here -->
- 
-    <div id="dialog" class="window" >
+    <br />
+    <div id="dialog" style="display:none;" class="window">
    <center><h1>Salas A</h1>
        <img  float="left" src="../../Images/Pisos/salasA.png" />
         <p>Piso 1</p>
@@ -106,7 +99,34 @@
         <a href="#" class="close">Close it</a></center>
  
     </div>
+   <br />
+    <div id="dialog2" style="display:none;" class="window" >
+   <center><h1>Salas B</h1>
+       <p>Piso 1</p>
+       <img  float="left" src="../../Images/Pisos/SalasB_p1.png" />
+        <p>Piso 2</p>
+        <img  float="left" src="../../Images/Pisos/SalasB_p2.png" />
+        <!-- close button is defined as close class -->
+        <a href="#" class="close" >Close it</a></center>
  
+    </div>
+
+
+
+<center>
+<h2>@Model.Nombre</h2>
+<br />
+<p>@Model.Descripcion</p>
+<br />
+ <div id="boxes">    
+    <!-- #customize your modal window here -->
+ @if(Model.Id>=5 && Model.Id<9){
+     <a href="#dialog" name="modal">Plano Salas A</a>
+
+ }
+    else if((Model.Id>=37&&Model.Id<50)||Model.Id==172){
+             <a href="#dialog2" name="modal">Plano Salas B</a> 
+    }
   <div id="d" class="window">
         <img src="../../Content/Propuesta/images/logo.png" /> 
         <p>SOY UNA COSA DIFERENTE</p>
@@ -119,13 +139,7 @@
     <!-- Do not remove div#mask, because you'll need it to fill the whole screen --> 
     <div id="mask"></div>
 </div>
-
-
-<center>
-<h2>@Model.Nombre</h2>
-<br />
-<p>@Model.Descripcion</p>
-<br />
+ <br />
 @if (Model.LugarContenedor != null)
 {
     <p>Es parte de @Model.LugarContenedor.Nombre</p>
