@@ -1,21 +1,35 @@
-﻿@model IEnumerable<Demo_v2.Models.Categoria>
+﻿@model Demo_v2.Models.Packages.CategoriasYFacultades
 
 @{
     ViewBag.Title = "Index";
 }
 
 
+<h1>Puede elegir buscar por categoría o facultad</h1>
+
 <h2>Buscar por Categoría</h2>
 <br/>
-    <form action="Lugares/Search">
-		<select name="idCategoria" size="1" onchange="if(value != 0) submit();">
-			<option  selected="selected" value=0>Seleccione una Categoría</option>
-				    @foreach(var cat in Model)
-                    {
-                        <option value=@cat.Id><li>@Html.ActionLink(cat.Nombre, "Search", new { idCategoria = cat.Id })</li></option>
-                    }
-		</select>
-	</form>
-
+<form action="Lugares/Search">
+	<select name="idCategoria" size="1" onchange="if(value != 0) submit();">
+		<option  selected="selected" value=0>Seleccione una Categoría</option>
+				@foreach(var cat in Model.Categorias)
+                {
+                    <option value=@cat.Id><li>@Html.ActionLink(cat.Nombre, "Search", new { idCategoria = cat.Id })</li></option>
+                }
+	</select>
+</form>
+<br />
+<hr />
+<br />
+<h2>Buscar por Facultad</h2>
+<form action="Lugares/SearchByFaculty">
+	<select name="idFacultad" size="1" onchange="if(value != 0) submit();">
+		<option  selected="selected" value=0>Seleccione una Facultad</option>
+				@foreach(var cat in Model.Facultades)
+                {
+                    <option value=@cat.Id><li>@Html.ActionLink(cat.Nombre, "Search", new { idCategoria = cat.Id })</li></option>
+                }
+	</select>
+</form>
 
 <br/>

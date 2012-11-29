@@ -197,6 +197,7 @@
     <Compile Include="Models\Horario.cs" />
     <Compile Include="Models\InMemoryUserStore.cs" />
     <Compile Include="Models\Lugar.cs" />
+    <Compile Include="Models\Packages\CategoriasYFacultades.cs" />
     <Compile Include="Models\Packages\DynamicLinkInfo.cs" />
     <Compile Include="Models\Punto.cs" />
     <Compile Include="Models\Packages\ResultadosBusquedaSala.cs" />
@@ -368,6 +369,7 @@
     <Content Include="Views\Lugares\Test.cshtml" />
     <Content Include="Views\Lugares\Show.cshtml" />
     <Content Include="Views\Salas\ConfirmBooking.cshtml" />
+    <Content Include="Views\Lugares\SearchByFaculty.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -18,7 +18,8 @@ namespace Demo_v2.Controllers
         public ActionResult Index()
         {
             var categorias = db.Categoria.ToList();
-            return View(categorias);
+            var facultades = db.Facultad.ToList();
+            return View(new CategoriasYFacultades { Categorias = categorias, Facultades = facultades });
         }
 
         //
@@ -28,6 +29,15 @@ namespace Demo_v2.Controllers
         {
             var cat = db.Categoria.Single(a => a.Id == idCategoria);
             return View(cat);
+        }
+
+        //
+        // GET: /Lugares/Search?idFacultad=1
+
+        public ActionResult SearchByFaculty(int idFacultad)
+        {
+            var fac = db.Facultad.Single(f => f.Id == idFacultad);
+            return View(fac);
         }
 
         //
