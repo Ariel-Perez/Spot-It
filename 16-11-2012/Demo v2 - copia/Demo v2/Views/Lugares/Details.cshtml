@@ -88,6 +88,18 @@
 
        });
 
+       function showAndClearField(frm,lug){
+  if (frm.firstName.value == "")
+      alert("Hey! You didn't enter anything!")
+  else
+      alert("The field contains the text: " + frm.firstName.value)
+  frm.firstName.value = ""
+ 
+
+   @Html.ActionLink("Link para compartir", "Show", new {idLugar = lug, mensaje = frm.firstName.value})
+}
+    
+
 </script>
 <a href="#dialog" name="modal">Plano Salas A</a>
 <br />
@@ -162,7 +174,15 @@ if (Model.Comentario.Count == 0)
         <li>@Html.ActionLink(categoria.Nombre, "Search", "Lugares", new { idCategoria = categoria.Id }, null)</li>
     }
 </ul>
+<br /><br />
 
+<h1>¿Compartir el lugar?</h1>
+
+<FORM NAME="test">
+<p>Escribe un mensaje (opcional)</p><INPUT TYPE="TEXT" NAME="firstName"><BR><BR>
+<INPUT TYPE="Button" Value="Crear link para compartir" onClick="showAndClearField(this.form,@Model.Id)">
+</P>
+</FORM>
 
 
 <br />
