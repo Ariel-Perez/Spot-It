@@ -15,9 +15,14 @@ namespace Demo_v2.Controllers
         // GET: /Maps/
         public ActionResult Map()
         {
-            var categorias = db.Categoria.ToList();
+            try
+            {
+                var categorias = db.Categoria.ToList();
+                return View(categorias);
+            }
+            catch { return View(new List<Categoria> { }); }
             
-            return View(categorias);
+            
         }
 
         //
