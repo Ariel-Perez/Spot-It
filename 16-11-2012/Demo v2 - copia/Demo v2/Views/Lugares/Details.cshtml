@@ -89,6 +89,18 @@
        });
 
 
+       
+function showAndClearField(frm){
+    if (frm.firstName.value == "")
+        alert("Hey! You didn't enter anything!")
+    else
+        alert("The field contains the text: " + frm.firstName.value);
+    Model.Mensaje = frm.firstName.value;
+    frm.firstName.value = ""
+}
+     
+
+
 </script>
     <br />
     <div id="dialog" style="display:none;" class="window">
@@ -156,14 +168,20 @@
     }
 </ul>
 <br /><br />
-
+    <FORM NAME="test">
+<H2>Enter something into the field and press the button. <br>
+Please try this a few times.</H2>
+<P>Enter your First Name: <INPUT TYPE="TEXT" NAME="firstName"><BR><BR>
+<INPUT TYPE="Button" Value="Show and Clear Input" onClick="showAndClearField(this.form)">
+</P>
+</FORM>
 <h1>¿Compartir el lugar? Copia el siguiente link</h1>
 
-   @Html.ActionLink(Url.Action("Show", "www.spotit.somee.com/Lugares", new { idLugar = @Model.Id }), "Show", new { idLugar = @Model.Id })
+   @Html.ActionLink(Url.Action("Show", "www.spotit.somee.com"+@HttpContext.Current.Request.Url.AbsolutePath, new { idLugar = @Model.Id }), "Show", new { idLugar = @Model.Id, mensaje = @Model.Mensaje })
    <br /><br /><br />
 <br />
-
-  <div class="fb-comments" data-href="http://www.spotit.somee.com" data-num-posts="2" data-width="470"></div></center>
+   
+  <div class="fb-comments" data-href="http://www.spotit.somee.com/@HttpContext.Current.Request.Url.AbsolutePath?idLugar=@Model.Id" data-num-posts="2" data-width="470"></div></center>
 <br />
 <hr />
 @Html.ActionLink("Volver", "Index")
