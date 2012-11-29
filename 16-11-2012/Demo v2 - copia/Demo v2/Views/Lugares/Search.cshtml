@@ -28,14 +28,14 @@
         <div id="contextMenuH"></div>
         <div id="contextMenuB"></div>
     </div>
-<div scroll="true" height="200">
+<center><div>
     <ol>
     @foreach (var lugar in @Model.Lugar)
     {
         <li>@Html.ActionLink(lugar.Nombre, "Details", new {idLugar = lugar.Id})</li>
     }
     </ol>
-</div>
+</div></center>
 <br />
 <br />
 <hr />
