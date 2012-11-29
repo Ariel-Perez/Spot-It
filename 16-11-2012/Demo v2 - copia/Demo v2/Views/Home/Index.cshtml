@@ -16,7 +16,7 @@
 		<article class="feature_text">
 			<h2>¿Andas perdido? ¿Quieres encontrar tu facultad? ¡Allons-y!</h2>
 			<p>El campus San Joaquín se caracteriza por ser la sede más grande de la universidad. Pero no te preocupes, ahora jamás volverás a perderte, revisa el mapa de Spot it y ¡encuentra tu lugar!</p>
-			<a @Html.ActionLink("Visita el Mapa", "Map", "Maps")</a>
+			<a @Html.ActionLink("Visita el buscador", "Index", "Lugares")</a>
     
   
 		</article>
@@ -31,19 +31,19 @@
 	<li class="service_1">
 		<h3>Lugares</h3>
 		<p>Encuentra las facultades, salas, y más. Nunca volverás a llegar tarde a clases.</p>
-		<a href="Lugares" class="button_1">Informaci&oacute;n</a>
+		<a class="button_1"  @Html.ActionLink("Información", "Index", "Lugares")
 	</li>
     <!--Búsqueda de autoridades -->
 	<li class="service_2">
 		<h3>Autoridades</h3>
 		<p>¿Buscas a la secretaria de alguna facultad? ¿Quieres saber dónde está la Feuc?</p>
-		<a href="#" class="button_1">Informaci&oacute;n</a>
+		<a class="button_1"  @Html.ActionLink("Información", "Index", "Salas")
 	</li>
     <!-- Búsqueda de eventos-->
 	<li class="service_3">
-		<h3>Eventos</h3>
-		<p>Revisa todo lo que pasará en el campus y dónde se desarrollará la actividad.</p>
-		<a href="#" class="button_1">Informaci&oacute;n</a>
+		<h3>Salas</h3>
+		<p>Revisa la disponibilidad de todas las salas del campus.</p>
+		<a class="button_1" @Html.ActionLink("Información", "Index", "Salas")
 	</li>
 
 </ul>

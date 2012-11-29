@@ -21,14 +21,14 @@
 }
 
 <!--TODO ESTARÁ BIEN MIENTRAS EXISTA LA VARIABLE cosas-->
-
-<h2>Buscando resultados para @Model.Nombre</h2>
+<br /><br /><br />
+<center><h2>Buscando resultados para @Model.Nombre</h2></center>
 <div id="container"></div>
  <div id="contextMenu" style="display:none">
         <div id="contextMenuH"></div>
         <div id="contextMenuB"></div>
     </div>
-<div>
+<div scroll="true" height="200">
     <ol>
     @foreach (var lugar in @Model.Lugar)
     {
