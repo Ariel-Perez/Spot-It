@@ -88,17 +88,6 @@
 
        });
 
-       function showAndClearField(frm,lug){
-  if (frm.firstName.value == "")
-      alert("Hey! You didn't enter anything!")
-  else
-      alert("The field contains the text: " + frm.firstName.value)
-  frm.firstName.value = ""
- 
-
-   @Html.ActionLink("Link para compartir", "Show", new {idLugar = lug, mensaje = frm.firstName.value})
-}
-    
 
 </script>
 <a href="#dialog" name="modal">Plano Salas A</a>
@@ -155,15 +144,10 @@
 </ul>
 <br /><br />
 
-<h1>¿Compartir el lugar?</h1>
+<h1>¿Compartir el lugar? Copia el siguiente link</h1>
 
-<FORM NAME="test">
-<p>Escribe un mensaje (opcional)</p><INPUT TYPE="TEXT" NAME="firstName"><BR><BR>
-<INPUT TYPE="Button" Value="Crear link para compartir" onClick="showAndClearField(this.form,@Model.Id)">
-</P>
-</FORM>
-
-
+   @Html.ActionLink(Url.Action("Show", "www.spotit.somee.com/Lugares", new { idLugar = @Model.Id }), "Show", new { idLugar = @Model.Id })
+   <br /><br /><br />
 <br />
 
   <div class="fb-comments" data-href="http://www.spotit.somee.com" data-num-posts="2" data-width="470"></div>
