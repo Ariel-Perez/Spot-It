@@ -1,9 +1,8 @@
-﻿@model Demo_v2.Models.Lugar
+﻿@model Demo_v2.Models.Lugar 
 
 @{
     ViewBag.Title = "Details";
 }
-
 
 <script type="text/javascript"
      src="http://code.jquery.com/jquery-latest.pack.js"></script>
@@ -90,13 +89,21 @@
 
 
        
-function showAndClearField(frm){
-    if (frm.firstName.value == "")
-        alert("Hey! You didn't enter anything!")
-    else
-        alert("The field contains the text: " + frm.firstName.value);
-    Model.Mensaje = frm.firstName.value;
-    frm.firstName.value = ""
+function showAndClearField(){
+
+    var a = document.getElementById("xyz");
+    var link = "http://www.spotit.somee.com/Lugares/Show"+"?idLugar=" +@Model.Id + "&mensaje=" + a.value;
+
+      //  alert("The field contains the text: " + link );
+
+
+    document.getElementById("p").innerText = link;
+    //alert(link);
+    document.getElementById("p").href = link;
+    document.getElementById("p").style.display = "block";
+    document.getElementById("texto").style.display = "block";
+
+   
 }
      
 
@@ -168,17 +175,21 @@ function showAndClearField(frm){
     }
 </ul>
 <br /><br />
-    <FORM NAME="test">
-<H2>Enter something into the field and press the button. <br>
-Please try this a few times.</H2>
-<P>Enter your First Name: <INPUT TYPE="TEXT" NAME="firstName"><BR><BR>
-<INPUT TYPE="Button" Value="Show and Clear Input" onClick="showAndClearField(this.form)">
+    <FORM NAME="test" >
+<H2>Escribe un mensaje para enviar junto al enlace</H2><br /><br />
+<p><INPUT id="xyz" TYPE="TEXT" NAME="firstName"><BR><BR>
+<a style="float:none" class="button_1" onClick="showAndClearField()">Generar enlace</a>
 </P>
-</FORM>
-<h1>¿Compartir el lugar? Copia el siguiente link</h1>
+</FORM> <br /><br />
+<h1 id="texto" style="display:none">¿Compartir el lugar? Copia el siguiente link</h1>
 
-   @Html.ActionLink(Url.Action("Show", "www.spotit.somee.com"+@HttpContext.Current.Request.Url.AbsolutePath, new { idLugar = @Model.Id }), "Show", new { idLugar = @Model.Id, mensaje = @Model.Mensaje })
-   <br /><br /><br />
+  <!-- @Html.ActionLink(Url.Action("Show", "www.spotit.somee.com"+@HttpContext.Current.Request.Url.AbsolutePath, new { idLugar = @Model.Id }), "Show", new { idLugar = @Model.Id })-->
+  
+    
+  
+    <a id="p" style="display:none; font-size:24px;" >enlace</a>
+
+    <br />
 <br />
    
   <div class="fb-comments" data-href="http://www.spotit.somee.com/@HttpContext.Current.Request.Url.AbsolutePath?idLugar=@Model.Id" data-num-posts="2" data-width="470"></div></center>

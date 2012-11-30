@@ -46,6 +46,8 @@ namespace Demo_v2.Controllers
         public ActionResult Details(int idLugar)
         {
             var lugar = db.Lugar.Single(a => a.Id == idLugar);
+            var hola =100;
+            
             return View(lugar);
         }
 
