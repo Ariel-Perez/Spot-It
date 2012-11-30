@@ -16,13 +16,13 @@
     };
 }
 <br /><br />
-<h1>Buscador de Salas Vacías</h1>
-<h2>Mostrando disponibilidad para semana del @Model.Day / @Model.Month</h2>
+<center><h1>Buscador de Salas Vacías</h1>
+<h2>Mostrando disponibilidad para semana del @Model.Day / @Model.Month</h2></center>
 
-<form action="/Salas/Search" method="get">
-    <div style="width:30%;float:left;text-align:center; vertical-align:middle">
+<form action="/Salas/Search" method="get" style="padding-bottom:100px;padding-top:30px">
+    <div style="width:30%;float:left;text-align:center; vertical-align:middle;padding-left: 20%;">
 	    <h2>Seleccione los horarios en que necesita la sala</h2>
-        <br />
+        <br /><br /><br /><br />
 	    <table style="width:75%">
 		    <tr>
                 <th>Módulo</th>
@@ -59,18 +59,18 @@
 	    </table>
 	    <br />
     </div>
-    <div style="width:50%;float:left">
+    <div style="width:50%;float:left;">
 	    <h2>Seleccione preferencias para la sala</h2>
         <br />
 	    <h3 style="display:inline">Capacidad:</h3>
         @Html.TextBox("capacity", "0")
         <input type="button" name="inc" value="^" onclick="increaseCapacity()" />
         <input type="button" name="dec" value="v" onclick="decreaseCapacity()" />
-        <br />
-        <input type="submit" value="Buscar" />
+        <br /><br /><br />
+        <input type="submit" style="float:center" value="Buscar" /><br /><br /><br />
     </div>
 </form>
-<br /><br /><br />
+<br /><br /><br /><br /><br />
 <script type="text/javascript">
     function increaseCapacity() {
         document.getElementById("capacity").value++;
@@ -79,3 +79,4 @@
         document.getElementById("capacity").value--;
     }
 </script>
+<br /><br /><br /><br />

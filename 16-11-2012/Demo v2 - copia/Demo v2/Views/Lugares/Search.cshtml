@@ -23,19 +23,23 @@
 <!--TODO ESTARÁ BIEN MIENTRAS EXISTA LA VARIABLE cosas-->
 <br /><br /><br />
 <center><h2>Buscando resultados para @Model.Nombre</h2></center>
-<div id="container"></div>
- <div id="contextMenu" style="display:none">
-        <div id="contextMenuH"></div>
-        <div id="contextMenuB"></div>
-    </div>
-<center><div>
+
+
+<div style="height:250px; width:200px; overflow-y:scroll;float:left;margin-left:300px; font-size:medium">
     <ol>
     @foreach (var lugar in @Model.Lugar)
     {
         <li>@Html.ActionLink(lugar.Nombre, "Details", new {idLugar = lugar.Id})</li>
     }
     </ol>
-</div></center>
+</div>
+
+<div id="container" style="left:5%"></div>
+ <div id="contextMenu" style="display:none">
+        <div id="contextMenuH"></div>
+        <div id="contextMenuB"></div>
+    </div>
+
 <br />
 <br />
 <hr />

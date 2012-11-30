@@ -13,7 +13,7 @@ namespace Demo_v2.Controllers
         public static SpotItEntities db = new SpotItEntities();
         //
         // GET: /Maps/
-        public ActionResult Map()
+        public ActionResult Index()
         {
             try
             {
