@@ -110,6 +110,11 @@ function showAndClearField(){
       
 
 </script>
+<script>
+    function abrir(url) {
+        open(url, '', 'top=100,left=100,width=500,height=250');
+    }
+</script> 
     <br />
     <div id="dialog" style="display:none;" class="window">
    <center><h1>Salas A</h1>
@@ -189,11 +194,18 @@ function showAndClearField(){
     
   
     <a id="p" style="display:none; font-size:24px;" >enlace</a>
+<br />
+<a class="button_1" href="javascript:abrir('http://www.facebook.com/sharer.php?u=http://www.spotit.somee.com\@HttpContext.Current.Request.Url.AbsolutePath?idLugar=@Model.Id')" target="_blank"> Compartir en Fb </a>
+<br />
+ <a class="button_1" href="javascript:abrir('http://twitter.com/share?url=http://www.spotit.somee.com\@HttpContext.Current.Request.Url.AbsolutePath?idLugar=@Model.Id')" target="_blank"> Compartir en Twitter </a>
 
-    <br />
+        <br />
+
 <br />
    
-  <div class="fb-comments" data-href="http://www.spotit.somee.com/@HttpContext.Current.Request.Url.AbsolutePath?idLugar=@Model.Id" data-num-posts="2" data-width="470"></div></center>
+  <div class="fb-comments" data-href="http://www.spotit.somee.com\@HttpContext.Current.Request.Url.AbsolutePath?idLugar=@Model.Id" data-num-posts="2" data-width="470"></div></center>
+    
 <br />
+
 <hr />
 @Html.ActionLink("Volver", "Index")
